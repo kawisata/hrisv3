@@ -1,0 +1,1270 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class EmployeesTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+
+        DB::table('employees')->delete();
+
+        DB::table('employees')->insert(array (
+            0 =>
+            array (
+                'user_id' => '10680006',
+                'nama' => 'SYARIFAH SAFIA',
+                'gelar' => NULL,
+                'tempat_lahir' => ' Medan',
+                'tanggal_lahir' => '1968-07-25',
+                'tmt_kerja' => '2014-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            1 =>
+            array (
+                'user_id' => '10750004',
+                'nama' => 'RIDWAN JOHAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1975-06-29',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            2 =>
+            array (
+                'user_id' => '10760005',
+                'nama' => 'WAHID BUDI SETIAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1976-06-04',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            3 =>
+            array (
+                'user_id' => '10760009',
+                'nama' => 'ARIF WIBOWO',
+                'gelar' => NULL,
+                'tempat_lahir' => ' Jakarta',
+                'tanggal_lahir' => '1976-05-15',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            4 =>
+            array (
+                'user_id' => '11790011',
+                'nama' => 'IRFAN SOBARI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1979-11-20',
+                'tmt_kerja' => '2014-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            5 =>
+            array (
+                'user_id' => '12750018',
+                'nama' => 'ISEP HANDI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Sukabumi',
+                'tanggal_lahir' => '1975-05-25',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            6 =>
+            array (
+                'user_id' => '12840022',
+                'nama' => 'HENDRA SURYADILAGA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1984-10-10',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            7 =>
+            array (
+                'user_id' => '12860023',
+                'nama' => 'ANGGRAINI PUSPITANINGRUM',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jayapura',
+                'tanggal_lahir' => '1986-10-04',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            8 =>
+            array (
+                'user_id' => '12880021',
+                'nama' => 'RENI DIAN TRIFANNY',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Salatiga',
+                'tanggal_lahir' => '1988-05-07',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            9 =>
+            array (
+                'user_id' => '12890019',
+                'nama' => 'PUTHUT ARIK WIJANARKO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Trenggalek',
+                'tanggal_lahir' => '1989-08-20',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            10 =>
+            array (
+                'user_id' => '13850030',
+                'nama' => 'RIA DWI YUNIANTI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1985-06-08',
+                'tmt_kerja' => '2014-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            11 =>
+            array (
+                'user_id' => '17920083',
+                'nama' => 'NADIA TUMPUANKASIH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '1992-08-14',
+                'tmt_kerja' => '2017-03-14',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            12 =>
+            array (
+                'user_id' => '18810102',
+                'nama' => 'WIBOWO YOGA SAKSONO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Pemalang',
+                'tanggal_lahir' => '1981-04-27',
+                'tmt_kerja' => '2018-01-22',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            13 =>
+            array (
+                'user_id' => '18900136',
+                'nama' => 'SUMARJIYONO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'BANTUL',
+                'tanggal_lahir' => '1990-07-13',
+                'tmt_kerja' => '2018-11-08',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            14 =>
+            array (
+                'user_id' => '18930108',
+                'nama' => 'LIA KHOERINI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'KUTAI KARTANEGARA',
+                'tanggal_lahir' => '1993-12-25',
+                'tmt_kerja' => '2018-04-26',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            15 =>
+            array (
+                'user_id' => '18950137',
+                'nama' => 'LATHIFATUL MUAROFAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Lamongan',
+                'tanggal_lahir' => '1995-10-18',
+                'tmt_kerja' => '2018-12-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            16 =>
+            array (
+                'user_id' => '19650153',
+                'nama' => 'R ARI SUBAGDJA SH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'BANDUNG',
+                'tanggal_lahir' => '1965-09-07',
+                'tmt_kerja' => '2019-06-17',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            17 =>
+            array (
+                'user_id' => '19760161',
+                'nama' => 'RAHMAT SALIM',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1976-03-12',
+                'tmt_kerja' => '2019-09-22',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            18 =>
+            array (
+                'user_id' => '19850150',
+                'nama' => 'VERONICA JUDITH A',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1985-03-16',
+                'tmt_kerja' => '2019-05-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            19 =>
+            array (
+                'user_id' => '19930166',
+                'nama' => 'LEONNIE ARDHANIE',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Malang',
+                'tanggal_lahir' => '1994-01-19',
+                'tmt_kerja' => '2020-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            20 =>
+            array (
+                'user_id' => '19930172',
+                'nama' => 'IGNATIUS LOYOLA BRAMA KUSUMA SETIA PUTRA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bantul',
+                'tanggal_lahir' => '1988-07-19',
+                'tmt_kerja' => '2020-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            21 =>
+            array (
+                'user_id' => '19930175',
+                'nama' => 'RICO TAMPATI ADEH PUTRA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Pendopo',
+                'tanggal_lahir' => '1994-06-17',
+                'tmt_kerja' => '2020-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            22 =>
+            array (
+                'user_id' => '19930176',
+                'nama' => 'RIBUT WAHYUDI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Grobogan',
+                'tanggal_lahir' => '1989-02-12',
+                'tmt_kerja' => '2020-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            23 =>
+            array (
+                'user_id' => '19930177',
+                'nama' => 'KARTIKO PRAMONO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1987-07-27',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            24 =>
+            array (
+                'user_id' => '19930178',
+                'nama' => 'RIMA RACHMAWATI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1997-07-11',
+                'tmt_kerja' => '2020-06-15',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            25 =>
+            array (
+                'user_id' => '19930179',
+                'nama' => 'ANDREAS KAULIKA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Semarang',
+                'tanggal_lahir' => '1990-11-14',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            26 =>
+            array (
+                'user_id' => '19930181',
+                'nama' => 'TOPIK RAMDANI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1989-04-30',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            27 =>
+            array (
+                'user_id' => '19930183',
+                'nama' => 'HENDRO SUJATMIKO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1986-02-07',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            28 =>
+            array (
+                'user_id' => '19930185',
+                'nama' => 'ABDUL PATAH ALI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1990-05-27',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            29 =>
+            array (
+                'user_id' => '19930186',
+                'nama' => 'MUHAMMAD MULYADI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Surakarta',
+                'tanggal_lahir' => '1990-11-01',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            30 =>
+            array (
+                'user_id' => '19930187',
+                'nama' => 'APRIYAN HIDAYAT',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Lampung Tengah',
+                'tanggal_lahir' => '1995-04-30',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            31 =>
+            array (
+                'user_id' => '19930188',
+                'nama' => 'YOGI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Ciamis',
+                'tanggal_lahir' => '1992-08-24',
+                'tmt_kerja' => '2020-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            32 =>
+            array (
+                'user_id' => '19930246',
+                'nama' => 'DIMAS HENDRA WIRAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Malang',
+                'tanggal_lahir' => '1983-04-14',
+                'tmt_kerja' => '2020-10-16',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            33 =>
+            array (
+                'user_id' => '19930251',
+                'nama' => 'HARI PRAKOSO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'SUKOHARJO',
+                'tanggal_lahir' => '1995-08-07',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            34 =>
+            array (
+                'user_id' => '19930252',
+                'nama' => 'ISRO SYAMUGI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Brebes',
+                'tanggal_lahir' => '1992-07-21',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            35 =>
+            array (
+                'user_id' => '19930254',
+                'nama' => 'ZIRA ZAHRA MUTIARA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '2001-03-23',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            36 =>
+            array (
+                'user_id' => '19930261',
+                'nama' => 'DINDA FITRI FATIMAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1996-06-16',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            37 =>
+            array (
+                'user_id' => '19930263',
+                'nama' => 'HILDA APRILIA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1994-04-12',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            38 =>
+            array (
+                'user_id' => '19930264',
+                'nama' => 'SALSABILLA YODIADYSA OKTARIKA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Palembang',
+                'tanggal_lahir' => '1998-10-01',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            39 =>
+            array (
+                'user_id' => '19930266',
+                'nama' => 'CHICKA HUSNUL HAFIFAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '1999-09-11',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            40 =>
+            array (
+                'user_id' => '19930267',
+                'nama' => 'BUDY SIDIK',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1989-09-08',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            41 =>
+            array (
+                'user_id' => '19930268',
+                'nama' => 'DIQI FADHILAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1983-03-24',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            42 =>
+            array (
+                'user_id' => '19930269',
+                'nama' => 'MOH RESTU NIZAR ANSORI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'SUKABUMI',
+                'tanggal_lahir' => '1995-12-28',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            43 =>
+            array (
+                'user_id' => '19930270',
+                'nama' => 'RENDI SUPRIADI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'BOGOR',
+                'tanggal_lahir' => '1984-12-25',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            44 =>
+            array (
+                'user_id' => '19930271',
+                'nama' => 'HUSNI RAMADHAN NASUTION',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1990-04-12',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            45 =>
+            array (
+                'user_id' => '19930272',
+                'nama' => 'TRISNA WIJAYA ISMAIL',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1990-02-21',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            46 =>
+            array (
+                'user_id' => '19930273',
+                'nama' => 'JEFRY AFRIANTO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Cirebon',
+                'tanggal_lahir' => '1992-05-01',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            47 =>
+            array (
+                'user_id' => '19930274',
+                'nama' => 'SUYANTO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Blora',
+                'tanggal_lahir' => '1979-06-14',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            48 =>
+            array (
+                'user_id' => '19930275',
+                'nama' => 'AZHAR HAWARI ILYAS',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Banyumas',
+                'tanggal_lahir' => '1993-03-29',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            49 =>
+            array (
+                'user_id' => '19930276',
+                'nama' => 'UNTUNG SLAMET RIYADI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Banyumas',
+                'tanggal_lahir' => '1992-05-21',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            50 =>
+            array (
+                'user_id' => '19930277',
+                'nama' => 'NARYU MAIS KABUL',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Klaten',
+                'tanggal_lahir' => '1991-05-26',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            51 =>
+            array (
+                'user_id' => '19930278',
+                'nama' => 'PAMUNGKAS AGIL KRISNANTO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Kulon Progo',
+                'tanggal_lahir' => '1990-09-04',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            52 =>
+            array (
+                'user_id' => '19930279',
+                'nama' => 'IMAM HARYADI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Blitar',
+                'tanggal_lahir' => '1987-05-29',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            53 =>
+            array (
+                'user_id' => '19930281',
+                'nama' => 'SURYA RACHMADAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Surabaya',
+                'tanggal_lahir' => '1990-04-18',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            54 =>
+            array (
+                'user_id' => '19930282',
+                'nama' => 'MOCH ZAENAL ARIFIN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Kediri',
+                'tanggal_lahir' => '1998-03-18',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            55 =>
+            array (
+                'user_id' => '19930283',
+                'nama' => 'SANOVA DWI MARGI WASKITO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Blitar',
+                'tanggal_lahir' => '1994-11-15',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            56 =>
+            array (
+                'user_id' => '19930284',
+                'nama' => 'SEPTIAN HADI IRAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Banyuwangi',
+                'tanggal_lahir' => '1992-09-14',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            57 =>
+            array (
+                'user_id' => '19930285',
+                'nama' => 'RAMADANIYA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Medan',
+                'tanggal_lahir' => '1989-04-18',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            58 =>
+            array (
+                'user_id' => '19930286',
+                'nama' => 'TEGUH SEPTIAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Medan',
+                'tanggal_lahir' => '1993-09-03',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            59 =>
+            array (
+                'user_id' => '19930288',
+                'nama' => 'DENI YULIANSYAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Palembang',
+                'tanggal_lahir' => '1990-02-07',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            60 =>
+            array (
+                'user_id' => '19930289',
+                'nama' => 'ARIF RAHMAN HAKIM',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandar Lampung',
+                'tanggal_lahir' => '1987-07-04',
+                'tmt_kerja' => '2021-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            61 =>
+            array (
+                'user_id' => '19930294',
+                'nama' => 'WINDI KHARISMA PUTRA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Pemalang',
+                'tanggal_lahir' => '1994-03-12',
+                'tmt_kerja' => '2021-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            62 =>
+            array (
+                'user_id' => '19930295',
+                'nama' => 'AGUS KADE SUCITA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1982-08-16',
+                'tmt_kerja' => '2021-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            63 =>
+            array (
+                'user_id' => '19930297',
+                'nama' => 'KARLO MANIK',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Medan',
+                'tanggal_lahir' => '1960-08-19',
+                'tmt_kerja' => '2021-01-01',
+                'created_at' => '2022-03-11 21:16:11',
+                'updated_at' => '2022-03-11 21:16:11',
+            ),
+            64 =>
+            array (
+                'user_id' => '19930305',
+                'nama' => 'RIO FERNANDEZ SIBARANI',
+                'gelar' => 'S.H',
+                'tempat_lahir' => 'Palembang',
+                'tanggal_lahir' => '1992-10-10',
+                'tmt_kerja' => '2021-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            65 =>
+            array (
+                'user_id' => '19930306',
+                'nama' => 'ASBAH MUNIROH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '1980-12-27',
+                'tmt_kerja' => '2021-07-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            66 =>
+            array (
+                'user_id' => '19930307',
+                'nama' => 'ARIEF RAHMAN HAKIM',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1993-07-07',
+                'tmt_kerja' => '2021-08-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            67 =>
+            array (
+                'user_id' => '19930313',
+                'nama' => 'YUDHA ADHI NUGROHO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Yogyakarta',
+                'tanggal_lahir' => '1990-07-18',
+                'tmt_kerja' => '2021-10-05',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            68 =>
+            array (
+                'user_id' => '19930322',
+                'nama' => 'DWI RIZKA FITRIANI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1993-03-23',
+                'tmt_kerja' => '2021-11-12',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            69 =>
+            array (
+                'user_id' => '19930323',
+                'nama' => 'RIDHO AGUNG PRATAMA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Palembang',
+                'tanggal_lahir' => '1993-04-26',
+                'tmt_kerja' => '2021-11-15',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            70 =>
+            array (
+                'user_id' => '19930327',
+                'nama' => 'HENDRY IRAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Tanjung Karang',
+                'tanggal_lahir' => '1990-03-29',
+                'tmt_kerja' => '2022-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-28 13:05:02',
+            ),
+            71 =>
+            array (
+                'user_id' => '19930328',
+                'nama' => 'MUHAMMAD GAFFAR SUCAHYO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1997-07-01',
+                'tmt_kerja' => '2022-01-11',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            72 =>
+            array (
+                'user_id' => '19930329',
+                'nama' => 'MATRILDE FABIOLA YASINTA WADA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Malang',
+                'tanggal_lahir' => '1997-03-14',
+                'tmt_kerja' => '2022-01-11',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            73 =>
+            array (
+                'user_id' => '19930331',
+                'nama' => 'RIZKY SUSETYOWATI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Tanjung Karang',
+                'tanggal_lahir' => '1995-07-01',
+                'tmt_kerja' => '2022-01-12',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            74 =>
+            array (
+                'user_id' => '19930332',
+                'nama' => 'LULU JUNAYAH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Kuningan',
+                'tanggal_lahir' => '2000-09-11',
+                'tmt_kerja' => '2022-01-13',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            75 =>
+            array (
+                'user_id' => '19930333',
+                'nama' => 'AGUS BAMBANG IRAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Cijaku',
+                'tanggal_lahir' => '1987-01-12',
+                'tmt_kerja' => '2022-01-14',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            76 =>
+            array (
+                'user_id' => '19930335',
+                'nama' => 'SUGIRI RACHMASYAH NUGRAHA',
+                'gelar' => 'A.Md.',
+                'tempat_lahir' => 'Singkawang',
+                'tanggal_lahir' => '1993-06-03',
+                'tmt_kerja' => '2022-02-01',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            77 =>
+            array (
+                'user_id' => '19930336',
+                'nama' => 'DEPI PEBRIANTI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '1994-02-03',
+                'tmt_kerja' => '2022-02-01',
+                'created_at' => '2022-03-02 17:03:24',
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            78 =>
+            array (
+                'user_id' => '19930337',
+                'nama' => 'LICI MEIRANTI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '1995-05-08',
+                'tmt_kerja' => '2022-02-04',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            79 =>
+            array (
+                'user_id' => '19930338',
+                'nama' => 'PUTRI PRIMEDIANA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '2001-01-21',
+                'tmt_kerja' => '2022-02-04',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            80 =>
+            array (
+                'user_id' => '19930339',
+                'nama' => 'ALDI FAUZI HUDANI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bandung',
+                'tanggal_lahir' => '2001-05-21',
+                'tmt_kerja' => '2022-02-04',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            81 =>
+            array (
+                'user_id' => '19930340',
+                'nama' => 'MUHAMMAD NURUL FURQON',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '2000-06-21',
+                'tmt_kerja' => '2022-02-04',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            82 =>
+            array (
+                'user_id' => '19970155',
+                'nama' => 'RISKA YUVISTA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1997-07-15',
+                'tmt_kerja' => '2019-07-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            83 =>
+            array (
+                'user_id' => '40873',
+                'nama' => 'TRISNA CAHYANI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Kendal',
+                'tanggal_lahir' => '1973-10-21',
+                'tmt_kerja' => '1992-09-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            84 =>
+            array (
+                'user_id' => '40878',
+                'nama' => 'SUMANTRI HADI NUGROHO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Lampung Tengah',
+                'tanggal_lahir' => '1974-02-13',
+                'tmt_kerja' => '1992-09-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            85 =>
+            array (
+                'user_id' => '42300',
+                'nama' => 'ANTON PONIMAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1969-11-06',
+                'tmt_kerja' => '1994-12-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            86 =>
+            array (
+                'user_id' => '43310',
+                'nama' => 'ZAENAL ARIFIN',
+                'gelar' => 'S.E',
+                'tempat_lahir' => 'Magelang',
+                'tanggal_lahir' => '1974-10-04',
+                'tmt_kerja' => '1996-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            87 =>
+            array (
+                'user_id' => '43925',
+                'nama' => 'DHARMAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1970-05-09',
+                'tmt_kerja' => '1996-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            88 =>
+            array (
+                'user_id' => '45196',
+                'nama' => 'M. ILUD SIREGAR',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Medan',
+                'tanggal_lahir' => '1974-07-04',
+                'tmt_kerja' => '1996-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            89 =>
+            array (
+                'user_id' => '45374',
+                'nama' => 'LISTIONO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Tuban',
+                'tanggal_lahir' => '1977-05-30',
+                'tmt_kerja' => '1996-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            90 =>
+            array (
+                'user_id' => '45544',
+                'nama' => 'MUCHAMAD SOLEH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Malang',
+                'tanggal_lahir' => '1976-12-22',
+                'tmt_kerja' => '1997-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            91 =>
+            array (
+                'user_id' => '46116',
+                'nama' => 'MULYANA',
+                'gelar' => 'M.Si.',
+                'tempat_lahir' => 'Sumedang',
+                'tanggal_lahir' => '1977-05-05',
+                'tmt_kerja' => '1997-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            92 =>
+            array (
+                'user_id' => '46565',
+                'nama' => 'MUHAMMAD SYARIEF',
+                'gelar' => 'S.E',
+                'tempat_lahir' => 'Bandar Lampung',
+                'tanggal_lahir' => '1976-02-22',
+                'tmt_kerja' => '1997-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            93 =>
+            array (
+                'user_id' => '46573',
+                'nama' => 'FERTANATALIA',
+                'gelar' => 'S.E',
+                'tempat_lahir' => 'Palembang',
+                'tanggal_lahir' => '1977-02-18',
+                'tmt_kerja' => '1997-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            94 =>
+            array (
+                'user_id' => '46921',
+                'nama' => 'HENDY HELMY',
+                'gelar' => 'S.T.,M.B.A.',
+                'tempat_lahir' => 'Malang',
+                'tanggal_lahir' => '1971-07-24',
+                'tmt_kerja' => '1997-07-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            95 =>
+            array (
+                'user_id' => '47145',
+                'nama' => 'OTNIAL EKO PAMIARSO',
+                'gelar' => 'S.Kom',
+                'tempat_lahir' => 'Semarang',
+                'tanggal_lahir' => '1980-10-13',
+                'tmt_kerja' => '2000-03-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            96 =>
+            array (
+                'user_id' => '48658',
+                'nama' => 'DIAN ANGGRAHENI PUSPITASARI',
+                'gelar' => 'S.E',
+                'tempat_lahir' => 'Cilacap',
+                'tanggal_lahir' => '1983-12-17',
+                'tmt_kerja' => '2007-02-16',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            97 =>
+            array (
+                'user_id' => '48903',
+                'nama' => 'DENY LESMONO SETIAWAN',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta Timur',
+                'tanggal_lahir' => '1978-01-09',
+                'tmt_kerja' => '2006-07-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            98 =>
+            array (
+                'user_id' => '49050',
+                'nama' => 'ARIEF SUJITO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Jakarta',
+                'tanggal_lahir' => '1980-11-21',
+                'tmt_kerja' => '2006-07-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            99 =>
+            array (
+                'user_id' => '50258',
+                'nama' => 'ARY SETYO NUGROHO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Ngawi',
+                'tanggal_lahir' => '1988-09-04',
+                'tmt_kerja' => '2007-11-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            100 =>
+            array (
+                'user_id' => '52375',
+                'nama' => 'ANDRY BUDIANTO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'Bogor',
+                'tanggal_lahir' => '1979-10-31',
+                'tmt_kerja' => '2008-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            101 =>
+            array (
+                'user_id' => '58196',
+                'nama' => 'HERWINDRA ANGGORO',
+                'gelar' => 'M.E.',
+                'tempat_lahir' => 'Purworejo',
+                'tanggal_lahir' => '1983-09-05',
+                'tmt_kerja' => '2010-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            102 =>
+            array (
+                'user_id' => '58219',
+                'nama' => 'SANDRA FERDINA',
+                'gelar' => 'S.E',
+                'tempat_lahir' => 'Bukittinggi',
+                'tanggal_lahir' => '1984-04-29',
+                'tmt_kerja' => '2010-04-01',
+                'created_at' => '2022-03-02 17:03:23',
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            103 =>
+            array (
+                'user_id' => '62340',
+                'nama' => 'FEBRIADI BONI SYAFPUTRA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'PADANG',
+                'tanggal_lahir' => '1991-02-21',
+                'tmt_kerja' => '2012-09-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            104 =>
+            array (
+                'user_id' => '63773',
+                'nama' => 'THANTI FELISIANI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'PURWAKARTA',
+                'tanggal_lahir' => '1986-01-09',
+                'tmt_kerja' => '2013-11-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            105 =>
+            array (
+                'user_id' => '64213',
+                'nama' => 'LUKMAN FIRMANSYAH SALEH',
+                'gelar' => NULL,
+                'tempat_lahir' => 'BANDUNG',
+                'tanggal_lahir' => '1990-10-15',
+                'tmt_kerja' => '2014-02-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            106 =>
+            array (
+                'user_id' => '64813',
+                'nama' => 'BAMBANG WIJANARKO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'BOGOR',
+                'tanggal_lahir' => '1971-08-12',
+                'tmt_kerja' => '2014-08-12',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            107 =>
+            array (
+                'user_id' => '64868',
+                'nama' => 'ELMINA RISA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'P. BRANDAN',
+                'tanggal_lahir' => '1970-01-04',
+                'tmt_kerja' => '2015-01-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            108 =>
+            array (
+                'user_id' => '65566',
+                'nama' => 'PUTERI KUNGKUM MARGARETHA',
+                'gelar' => NULL,
+                'tempat_lahir' => 'SALATIGA',
+                'tanggal_lahir' => '1987-06-17',
+                'tmt_kerja' => '2014-11-03',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+            109 =>
+            array (
+                'user_id' => '66431',
+                'nama' => 'ANANTA FENDI PRAYOGI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'MALANG',
+                'tanggal_lahir' => '1988-04-24',
+                'tmt_kerja' => '2015-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            110 =>
+            array (
+                'user_id' => '66464',
+                'nama' => 'RETNO KUSUMA DEWI',
+                'gelar' => NULL,
+                'tempat_lahir' => 'SIDOARJO',
+                'tanggal_lahir' => '1988-12-11',
+                'tmt_kerja' => '2015-04-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            111 =>
+            array (
+                'user_id' => '67754',
+                'nama' => 'ALOYSIUS GOENTOER SETYAWAN',
+                'gelar' => 'Drs.',
+                'tempat_lahir' => 'MALANG',
+                'tanggal_lahir' => '1966-05-12',
+                'tmt_kerja' => '2016-06-01',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:24',
+            ),
+            112 =>
+            array (
+                'user_id' => '69224',
+                'nama' => 'YUNANTO',
+                'gelar' => NULL,
+                'tempat_lahir' => 'CILACAP',
+                'tanggal_lahir' => '1986-12-06',
+                'tmt_kerja' => '2016-05-10',
+                'created_at' => NULL,
+                'updated_at' => '2022-03-02 17:03:23',
+            ),
+        ));
+
+
+    }
+}
