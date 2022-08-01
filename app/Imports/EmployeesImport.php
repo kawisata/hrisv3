@@ -21,40 +21,39 @@ use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder;
 
 class EmployeesImport implements ToCollection, WithUpserts, WithStartRow, SkipsEmptyRows
 {
-    public function collection(Collection $rows)
-    {
+	public function collection(Collection $rows)
+	{
 
-        // $value = $worksheet->getCell('A1')->getValue();
-        // $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($value);
+		// $value = $worksheet->getCell('A1')->getValue();
+		// $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($value);
 
-        foreach ($rows as $row) {
+		foreach ($rows as $row) {
 
-            Employee::updateOrCreate(
-                [
-                    'nip' => $row[1],
-                ],
-                [
+			Employee::updateOrCreate(
+				[
+					'user_id' => $row[1],
+				],
+				[
 
-                    'name'          => $row[3],
-                    'kelamin'       => $row[4],
-                    'place_of_birth'=> $row[5],
-                    // 'birthday'      => Date::excelToDateTimeObject($row[6])->format('Y-m-d'),
-                    'nik'           => $row[7],
-                    // 'religion'      => $row[11],
-                    'npwp'          => $row[9],
-                ]
-            );
+					'name'          => $row[3],
+					'kelamin'       => $row[4],
+					'place_of_birth' => $row[5],
+					// 'birthday'      => Date::excelToDateTimeObject($row[6])->format('Y-m-d'),
+					'nik'           => $row[7],
+					// 'religion'      => $row[11],
+					'npwp'          => $row[9],
+				]
+			);
+		}
+	}
 
-        }
-    }
+	public function uniqueBy()
+	{
+		return 'nip';
+	}
 
-    public function uniqueBy()
-    {
-        return 'nip';
-    }
-
-    public function startRow(): int
-    {
-        return 2;
-    }
+	public function startRow(): int
+	{
+		return 2;
+	}
 }

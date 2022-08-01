@@ -39,6 +39,11 @@ class UserAdminCreateModal extends ModalComponent
         return view('livewire.admin.user-admin-create-modal');
     }
 
+	public function userIdUpdated()
+	{
+		$this->email = $this->user_id . '@kawisata.id';
+	}
+
     protected static array $maxWidths = [
         'sm' => 'sm:max-w-sm',
         'md' => 'sm:max-w-md',

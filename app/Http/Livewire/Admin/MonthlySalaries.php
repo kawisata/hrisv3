@@ -9,6 +9,7 @@ use App\Models\Offcycle;
 use Livewire\WithFileUploads;
 use App\Imports\OncycleImport;
 use App\Imports\OffcycleImport;
+use Throwable;
 
 class MonthlySalaries extends Component
 {
@@ -75,6 +76,5 @@ class MonthlySalaries extends Component
         (new EmployeeDetailImport)->import($this->employee, null, \Maatwebsite\Excel\Excel::XLSX);
         session()->flash('message', 'data pekerja Added.');
         return redirect()->to('superadmin/salaries');
-    }
-
+	}
 }
