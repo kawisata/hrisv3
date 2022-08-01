@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "894190b9cb9c003689e9b1247bfadc35",
+    "content-hash": "e06ea2bef027d00fc303b6db53e58ba3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4511,21 +4510,21 @@
         },
         {
             "name": "power-components/livewire-powergrid",
-            "version": "v2.4.13",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Power-Components/livewire-powergrid.git",
-                "reference": "c4ce8cdfbae2e3223cc8ff10fbfc9002414df7a7"
+                "reference": "1cf1783a22a39a306083a9cd94257de6471f43f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Power-Components/livewire-powergrid/zipball/c4ce8cdfbae2e3223cc8ff10fbfc9002414df7a7",
-                "reference": "c4ce8cdfbae2e3223cc8ff10fbfc9002414df7a7",
+                "url": "https://api.github.com/repos/Power-Components/livewire-powergrid/zipball/1cf1783a22a39a306083a9cd94257de6471f43f3",
+                "reference": "1cf1783a22a39a306083a9cd94257de6471f43f3",
                 "shasum": ""
             },
             "require": {
                 "box/spout": "^3",
-                "doctrine/dbal": "^3.1|^2.12.1",
+                "doctrine/dbal": "^3.1",
                 "livewire/livewire": "^2.4",
                 "php": "^7.4.1 | ^8.0 | ^8.1"
             },
@@ -4570,9 +4569,9 @@
             "homepage": "https://github.com/power-components/livewire-powergrid",
             "support": {
                 "issues": "https://github.com/Power-Components/livewire-powergrid/issues",
-                "source": "https://github.com/Power-Components/livewire-powergrid/tree/v2.4.13"
+                "source": "https://github.com/Power-Components/livewire-powergrid/tree/v2.0.1"
             },
-            "time": "2022-05-20T18:21:57+00:00"
+            "time": "2022-01-12T19:43:43+00:00"
         },
         {
             "name": "pragmarx/google2fa",
@@ -9421,6 +9420,64 @@
             "time": "2021-03-09T10:59:23+00:00"
         },
         {
+            "name": "wire-elements/modal",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wire-elements/modal.git",
+                "reference": "8daf2604dcdb75650951937301b2525fb1cf15d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wire-elements/modal/zipball/8daf2604dcdb75650951937301b2525fb1cf15d2",
+                "reference": "8daf2604dcdb75650951937301b2525fb1cf15d2",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^2.0",
+                "php": "^7.4|^8.0",
+                "spatie/laravel-package-tools": "^1.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.15",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LivewireUI\\Modal\\LivewireModalServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LivewireUI\\Modal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philo Hermans",
+                    "email": "me@philohermans.com"
+                }
+            ],
+            "description": "Laravel Livewire modal component",
+            "keywords": [
+                "laravel",
+                "livewire",
+                "modal"
+            ],
+            "support": {
+                "issues": "https://github.com/wire-elements/modal/issues",
+                "source": "https://github.com/wire-elements/modal/tree/1.0.7"
+            },
+            "time": "2022-07-05T12:40:12+00:00"
+        },
+        {
             "name": "wireui/wireui",
             "version": "v0.15.0",
             "source": {
@@ -12225,5 +12282,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }
