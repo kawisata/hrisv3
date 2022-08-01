@@ -26,7 +26,7 @@ use App\Http\Controllers\ListKontrakController;
 use App\Http\Livewire\Admin\UserAdministration;
 use App\Http\Controllers\BerkasKontrakController;
 use App\Http\Controllers\PdfCertificateController;
-
+use App\Http\Controllers\BerkasKontrakUserController;
 use App\Http\Controllers\UpdateMemberReduksiController;
 use App\Http\Controllers\InputMemberReduksiController;
 
