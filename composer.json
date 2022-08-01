@@ -17,12 +17,13 @@
         "lsnepomuceno/laravel-a1-pdf-sign": "^0.0.18",
         "maatwebsite/excel": "^3.1",
         "orangehill/iseed": "^3.0",
-        "power-components/livewire-powergrid": "2.x",
+        "power-components/livewire-powergrid": "2.0.1",
         "rappasoft/laravel-livewire-tables": "^2.7",
         "realrashid/sweet-alert": "^4.1",
         "riskihajar/terbilang": "^1.2",
         "santigarcor/laratrust": "^6.3",
         "simplesoftwareio/simple-qrcode": "^4.2",
+        "wire-elements/modal": "^1.0",
         "wireui/wireui": "^0.15.0"
     },
     "require-dev": {
