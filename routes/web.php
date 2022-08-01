@@ -26,8 +26,13 @@ use App\Http\Controllers\ListKontrakController;
 use App\Http\Livewire\Admin\UserAdministration;
 use App\Http\Controllers\BerkasKontrakController;
 use App\Http\Controllers\PdfCertificateController;
-use App\Http\Controllers\BerkasKontrakUserController;
+
+use App\Http\Controllers\UpdateMemberReduksiController;
+use App\Http\Controllers\InputMemberReduksiController;
+
+
 use App\Http\Controllers\DocumentPphPribadiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -116,18 +121,18 @@ Route::controller(SalarySlipController::class)
 });
 
 
-Route::resource('Berkas', BerkasController::class);
-Route::resource('BerkasUser', BerkasControllerUser::class);
-Route::resource('DaftarBerkas', DaftarBerkas::class);
-Route::resource('ListKaryawan', BerkasKontrakUserController::class);
-Route::resource('ListKontrak', ListKontrakController::class);
-// Route::resource('ListKontrak', ListKontrakController::class);
-Route::group(['prefix' => "list-kontrak"], function () {
-	Route::get('/edit/{id}', [ListKontrakController::class, 'edit']);
-});
-//Route::get('/ListKaryawan','BerkasKontrakUserController@index');
-//Route::get('/ListKaryawan/cari','BerkasKontrakUserController@cari');
-Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
-//Route::get('ListKaryawan',[BerkasKontrakUserController::class, 'index']);
-//Route::get('/ListKaryawan/cari',[BerkasKontrakUserController::class, 'cari']);
-Route::resource('DaftarKontrak', BerkasKontrakController::class);
+    Route::resource('Berkas', BerkasController::class);
+    Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
+    Route::resource('MemberInputReduksi',InputMemberReduksiController::class);
+    
+    
+    Route::resource('BerkasUser', BerkasControllerUser::class);
+    Route::resource('DaftarBerkas', DaftarBerkas::class);
+    Route::resource('ListKaryawan', BerkasKontrakUserController::class);
+    Route::resource('ListKontrak', ListKontrakController::class);
+    Route::group(['prefix' => "list-kontrak"], function() {
+        Route::get('/edit/{id}', [ListKontrakController::class, 'edit']);
+    });
+    Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
+    Route::resource('DaftarKontrak', BerkasKontrakController::class);
+    Route::resource('API', KAI_APIController::class);

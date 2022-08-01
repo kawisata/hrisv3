@@ -28,8 +28,8 @@
             </div> -->
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Berkas KK (Kartu Keluarga) &emsp;&emsp;&emsp;&emsp;&emsp;:</label> 
-                                <input type="file" class="form-control" name="berkas_kk"> </br>
+                                <label class="font-weight-bold">Berkas KK (Kartu Keluarga) &emsp;&emsp;&emsp;&emsp;&emsp; :</label> 
+                                <input type="file" name="berkas_kk"> </br>
                                 <div></div>
                                 <div class="text-center" style="display:{{ ($blog->berkas_kk) ? 'block' : 'none' }}">
                                     <center>
@@ -39,8 +39,8 @@
                             </div>
                             </br>
                             <div class="form-group">
-                                <label class="font-weight-bold">Berkas KTP (Kartu Tanda Penduduk) &emsp;:</label>  
-                                <input type="file" class="form-control" name="ktp">
+                                <label class="font-weight-bold">Berkas KTP (Kartu Tanda Penduduk) &emsp;: </label>  
+                                <input type="file" name="ktp">
                                 <div class="text-center" style="display:{{ ($blog->ktp) ? 'block' : 'none' }}">
                                     <center>
                                     <embed src="{{ Storage::url('public/blogs/').$blog->ktp }}" class="rounded" style="width: 300px">
@@ -49,8 +49,8 @@
                             </div>
                             </br>
                             <div class="form-group">
-                                <label class="font-weight-bold">Berkas Ijazah &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</label>
-                                <input type="file" class="form-control" name="ijazah">
+                                <label class="font-weight-bold">Berkas Ijazah &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</label>
+                                <input type="file" name="ijazah">
                                 <div class="text-center" style="display:{{ ($blog->ijazah) ? 'block' : 'none' }}">
                                     <center>    
                                     <embed src="{{ Storage::url('public/blogs/').$blog->ijazah }}" class="rounded" style="width: 300px">
@@ -82,9 +82,9 @@
                                     <td>{{ $blog->sekolah }}</td>
                                     <td>
                                         @if ($blog->status_berkas == 'Dalam Proses')
-                                        <p class="text-warning">Dalam Proses</p>
+                                        <p class="text">Dalam Proses</p>
                                         @elseif ($blog->status_berkas == 'Berkas Diterima')
-                                        <p class="text-warning">Berkas Diterima</p>
+                                        <span style="color: blue;">Berkas Diterima</span>
                                         @elseif ($blog->status_berkas == 'Berkas Ditolak')
                                         <span style="color: red;">Berkas Ditolak</span>
                                         @else
