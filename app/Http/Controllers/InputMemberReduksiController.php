@@ -66,14 +66,7 @@ class InputMemberReduksiController extends Controller
         elseif ($request->gender==('Laki-Laki')) {
             $gender1 = ('1');
         }
-      /*  elseif ($request->reductiontypecode==('SUBSIDIARY50')) {
-            $reductiontypeid1 = ('321');
-        } 
-        elseif ($request->reductiontypecode==('SUBSIDIARY75')) {
-            $reductiontypeid1 = ('263');
-        } */
-        $gender1;
-        $reductiontypeid1;
+
         $blog = EmployeeModel::findOrFail($id);
         $currentTime = Carbon::now();
         $arr = [
@@ -84,7 +77,7 @@ class InputMemberReduksiController extends Controller
             'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
-            'reductiontypeid'	=> $request->$reductiontypeid,
+            'reductiontypeid'	=> $request->reductiontypeid,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
             'requestdate'	    => date("Y-m-d").' 00:00',
@@ -104,7 +97,7 @@ class InputMemberReduksiController extends Controller
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
-            'gender'	        => $request->gender,
+            'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
             'reductiontypeid'	=> $request->reductiontypeid,
