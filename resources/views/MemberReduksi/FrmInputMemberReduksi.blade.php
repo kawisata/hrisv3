@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Halaman Input Member Reduksi
+        Halaman Input Member Reduksii
         </h2>
     </x-slot>
     <div class="container mt-5 mb-5">
@@ -53,16 +53,23 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Jenis Kelamin</label>
-                                    <select name="gender" class="form-control" id="gender">
-                                        <option value="{{ old('gender', $blog->kelamin) }}">Pilih Jenis Kelamin</option>
-                                        <option value="1" @if (old('gender') == "1") {{ 'selected' }} @endif>Laki-Laki</option>
-                                        <option value="2" @if (old('gender') == "2") {{ 'selected' }} @endif>Perempuan</option>
-                                    </select>
+                                    <input type="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender', $blog->kelamin) }}" readonly placeholder="Masukkan No Jenis Kelamin">          
+                                  <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('gender')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
                                         </div>
                                     @enderror 
+                                   <!-- <select name="gender" class="form-control" id="gender">
+                                        <option value="{{ old('gender', $blog->kelamin) }}">Pilih Jenis Kelamin</option>
+                                        <option value="Laki-Laki" @if (old('gender') == "Laki-Laki") {{ 'selected' }} @endif>Laki-Laki</option>
+                                        <option value="Perempuan" @if (old('gender') == "Perempuan") {{ 'selected' }} @endif>Perempuan</option>
+                                    </select>
+                                    @error('gender')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror -->
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Alamat</label>
@@ -105,7 +112,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror 
-                                </div>
+                                </div> 
                                 <div class="form-group">
                                     <label class="font-weight-bold">ID Reduksi</label>
                                     <select name="reductiontypeid" class="form-control" id="reductiontypeid">
@@ -118,7 +125,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror 
-                                </div>
+                                </div> 
                                 <input type="hidden" name="cityid" value="0">
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Aktif Keanggotaan</label>
