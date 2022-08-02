@@ -16,7 +16,7 @@ class AddColumnEmployeeDetail extends Migration
         Schema::table('employee_details', function (Blueprint $table) {
             $table->string('nipp');
             $table->string('name');
-            $table->date('birthofdate');
+            $table->date('birthofdate')->nullable();
             $table->string('phonenumber');
             $table->string('gender');
             $table->string('address');
@@ -24,9 +24,9 @@ class AddColumnEmployeeDetail extends Migration
             $table->string('reductiontypeid');
             $table->string('cityid');
             $table->string('idnum');
-            $table->date('requestdate');
-            $table->date('startdate');
-            $table->date('enddate');
+            $table->date('requestdate')->nullable();
+            $table->date('startdate')->nullable();
+            $table->date('enddate')->nullable();
             $table->integer('duration');
             $table->string('email');
             $table->string('idtype');
