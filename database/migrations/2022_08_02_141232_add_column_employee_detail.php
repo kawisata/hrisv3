@@ -31,7 +31,7 @@ class AddColumnEmployeeDetail extends Migration
             $table->string('email');
             $table->string('idtype');
             $table->string('employeetype');
-            $table->string('status_member');
+            $table->string('status_member')->default('Belum Member');
             $table->string('token');
         });
     }

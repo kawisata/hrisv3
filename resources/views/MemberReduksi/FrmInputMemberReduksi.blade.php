@@ -113,7 +113,7 @@
                                         </div>
                                     @enderror 
                                 </div> 
-                                <div class="form-group">
+                               <!-- <div class="form-group">
                                     <label class="font-weight-bold">ID Reduksi</label>
                                     <select name="reductiontypeid" class="form-control" id="reductiontypeid">
                                         <option value="">Pilih Tipe Reduksi</option>
@@ -125,8 +125,9 @@
                                             {{ $message }}
                                         </div>
                                     @enderror 
-                                </div> 
+                                </div> -->
                                 <input type="hidden" name="cityid" value="0">
+                                
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Aktif Keanggotaan</label>
                                     <input type="date" class="form-control @error('startdate') is-invalid @enderror" name="startdate" value="{{ old('startdate') }}" placeholder="Masukkan Tanggal Aktif Keanggotaan">          

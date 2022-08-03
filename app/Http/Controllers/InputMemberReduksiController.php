@@ -22,8 +22,8 @@ class InputMemberReduksiController extends Controller
         $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
 
         $blogs = DB::table('employee_details')
-        ->leftJoin('users', 'employee_details.user_id', '=', 'users.id');
-        //->where('employee_details.status_member', '=', 'Belum Member');
+        ->leftJoin('users', 'employee_details.user_id', '=', 'users.id')
+        ->where('employee_details.status_member', '=', 'Belum Member');
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('users.name','like',"%".$cari."%")
@@ -59,14 +59,21 @@ class InputMemberReduksiController extends Controller
         ]);
 
         //get data Blog by ID
-        
+        //$reductiontypeid1;
         if ($request->gender==('Perempuan')) {
             $gender1 = ('2');
         } 
         elseif ($request->gender==('Laki-Laki')) {
             $gender1 = ('1');
         }
-
+  
+        switch ($request->reductiontypecode) {
+            case 'SUBSIDIARY50': $reductiontypeid1 = ('321');
+            break;
+            case 'SUBSIDIARY75': $reductiontypeid1 = ('263');
+            break;
+        }
+       
         $blog = EmployeeModel::findOrFail($id);
         $currentTime = Carbon::now();
         $arr = [
@@ -77,7 +84,7 @@ class InputMemberReduksiController extends Controller
             'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
-            'reductiontypeid'	=> $request->reductiontypeid,
+            'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
             'requestdate'	    => date("Y-m-d").' 00:00',
@@ -100,7 +107,7 @@ class InputMemberReduksiController extends Controller
             'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
-            'reductiontypeid'	=> $request->reductiontypeid,
+            'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
             'requestdate'	    => date("Y-m-d").' 00:00',
@@ -131,7 +138,7 @@ class InputMemberReduksiController extends Controller
             "gender": "'.$request->gender.'",
             "address": "'.$request->address.'",
             "reductiontypecode": "'.$request->reductiontypecode.'",
-            "reductiontypeid": "'.$request->reductiontypeid.'",
+            "reductiontypeid": "'.$reductiontypeid1.'",
             "cityid": "'.$request->cityid.'",
             "idnum": "'.$request->idnum.'",
             "requestdate": "'.date("Y-m-d").' 00:00'.'",
