@@ -45,7 +45,7 @@ class UpdateMemberReduksiController extends Controller
             'gender'	        => 'required',
             'address'	        => 'required',
             'reductiontypecode'	=> 'required',
-            'reductiontypeid'	=> 'required', 
+            //'reductiontypeid'	=> 'required', 
             'cityid'            => 'required',
             'idnum'	            => 'required',
             //'requestdate'	    => 'required',
@@ -58,6 +58,21 @@ class UpdateMemberReduksiController extends Controller
         ]);
 
         //get data Blog by ID
+        //$reductiontypeid1;
+        if ($request->gender==('Perempuan')) {
+            $gender1 = ('2');
+        } 
+        elseif ($request->gender==('Laki-Laki')) {
+            $gender1 = ('1');
+        }
+  
+        switch ($request->reductiontypecode) {
+            case 'SUBSIDIARY50': $reductiontypeid1 = ('321');
+            break;
+            case 'SUBSIDIARY75': $reductiontypeid1 = ('263');
+            break;
+        }
+       
         $blog = EmployeeModel::findOrFail($id);
         $currentTime = Carbon::now();
         $arr = [
@@ -65,10 +80,10 @@ class UpdateMemberReduksiController extends Controller
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
-            'gender'	        => $request->gender,
+            'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
-            'reductiontypeid'	=> $request->reductiontypeid,
+            'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
             'requestdate'	    => date("Y-m-d").' 00:00',
@@ -88,10 +103,10 @@ class UpdateMemberReduksiController extends Controller
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
-            'gender'	        => $request->gender,
+            'gender'	        => $gender1,
             'address'	        => $request->address,
             'reductiontypecode'	=> $request->reductiontypecode,
-            'reductiontypeid'	=> $request->reductiontypeid,
+            'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
             'requestdate'	    => date("Y-m-d").' 00:00',
@@ -122,7 +137,7 @@ class UpdateMemberReduksiController extends Controller
             "gender": "'.$request->gender.'",
             "address": "'.$request->address.'",
             "reductiontypecode": "'.$request->reductiontypecode.'",
-            "reductiontypeid": "'.$request->reductiontypeid.'",
+            "reductiontypeid": "'.$reductiontypeid1.'",
             "cityid": "'.$request->cityid.'",
             "idnum": "'.$request->idnum.'",
             "requestdate": "'.date("Y-m-d").' 00:00'.'",
