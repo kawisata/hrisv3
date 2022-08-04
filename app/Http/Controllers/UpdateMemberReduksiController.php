@@ -134,7 +134,7 @@ class UpdateMemberReduksiController extends Controller
             "name": "'.$request->name.'",
             "birthofdate": "'.$request->birthofdate.'",
             "phonenumber": "'.$request->phonenumber.'",
-            "gender": "'.$request->gender.'",
+            "gender": "'.$gender1.'",
             "address": "'.$request->address.'",
             "reductiontypecode": "'.$request->reductiontypecode.'",
             "reductiontypeid": "'.$reductiontypeid1.'",
