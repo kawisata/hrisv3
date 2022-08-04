@@ -148,7 +148,7 @@
                                 </div>
                                 <input type="hidden" name="duration" value="0">
                                 <input type="hidden" name="idtype" value="1">
-
+                                <input type="hidden" name="requestdate" value="{{Carbon\Carbon::now()->format('Y-m-d')}}" />
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tipe Karyawan</label>
                                     <select name="employeetype" class="form-control" id="employeetype">
