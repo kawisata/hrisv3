@@ -86,7 +86,7 @@ class UpdateMemberReduksiController extends Controller
             'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
-            'requestdate'	    => date("Y-m-d").' 00:00',
+            'requestdate'	    => $request->requestdate.' 00:00',
             'startdate'	        => $request->startdate.' 00:00',
             'enddate'	        => $request->enddate.' 23:59',
             'duration'          => $request->duration,
@@ -96,7 +96,7 @@ class UpdateMemberReduksiController extends Controller
             'token'             => $request->_token,
             'status_member'     => 'Member'
         ];
-        //dd($blog);
+      //  dd($arr);
 
         $apibody = [
             'nipp'              => $request->nipp.'KAWISTA',
@@ -109,7 +109,7 @@ class UpdateMemberReduksiController extends Controller
             'reductiontypeid'	=> $reductiontypeid1,
             'cityid'            => $request->cityid,
             'idnum'	            => $request->idnum,
-            'requestdate'	    => date("Y-m-d").' 00:00',
+            'requestdate'	    => $request->requestdate.' 00:00',
             'startdate'	        => $request->startdate.' 00:00',
             'enddate'	        => $request->enddate.' 23:59',
             'duration'          => $request->duration,
@@ -140,7 +140,7 @@ class UpdateMemberReduksiController extends Controller
             "reductiontypeid": "'.$reductiontypeid1.'",
             "cityid": "'.$request->cityid.'",
             "idnum": "'.$request->idnum.'",
-            "requestdate": "'.date("Y-m-d").' 00:00'.'",
+            "requestdate": "'.$request->requestdate.' 00:00'.'",
             "startdate": "'.$request->startdate.' 00:00'.'",
             "enddate": "'.$request->enddate.' 23:59'.'",
             "duration": 0,
