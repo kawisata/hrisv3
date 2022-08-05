@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MemberReduksi extends Model
 {
     use HasFactory;
-    protected $table = 'member_reduksi';
+    protected $table = 'Member_Reduksi';
     protected $fillable = [
         'user_id','nipp','name','birthofdate','phonenumber','gender','address','reductiontypecode',
         'reductiontypeid','cityid','idnum','requestdate','startdate','enddate','duration',
