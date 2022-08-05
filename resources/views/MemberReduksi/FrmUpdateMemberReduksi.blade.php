@@ -10,7 +10,7 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <form action="{{ route('MemberUpdateReduksi.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                            @csrf
                             @method('PUT')
                             <div class="form-group">
                                     <label class="font-weight-bold">NIPP</label>

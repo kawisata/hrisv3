@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnEmployeeDetail extends Migration
+class MemberReduksi1 extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class AddColumnEmployeeDetail extends Migration
      */
     public function up()
     {
-        Schema::table('employee_details', function (Blueprint $table) {
+        Schema::create('Member_Reduksi', function (Blueprint $table) {
+            $table->id();
             $table->string('nipp');
             $table->string('name');
             $table->date('birthofdate')->nullable();
@@ -31,8 +32,11 @@ class AddColumnEmployeeDetail extends Migration
             $table->string('email');
             $table->string('idtype');
             $table->string('employeetype');
-            $table->string('status_member')->default('Belum Member');
-            $table->string('token');
+            $table->string('code')->default('11');
+            $table->string('message');
+            $table->string('token')->nullable();
+            $table->timestamps();
+           
         });
     }
 
@@ -43,8 +47,6 @@ class AddColumnEmployeeDetail extends Migration
      */
     public function down()
     {
-        Schema::table('employee_details', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }
