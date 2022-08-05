@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class MemberReduksi extends Model
 {
     use HasFactory;
-    protected $table = 'member_reduksi_pegawai';
+    protected $table = 'member_reduksi';
     protected $fillable = [
         'user_id','nipp','name','birthofdate','phonenumber','gender','address','reductiontypecode',
         'reductiontypeid','cityid','idnum','requestdate','startdate','enddate','duration',
-        'email','idtype','employeetype','token' ];
+        'email','idtype','employeetype','code','message','token' ];
 }
 
 

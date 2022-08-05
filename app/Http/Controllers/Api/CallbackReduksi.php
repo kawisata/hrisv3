@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\CallbackInfo;
+use App\Models\MemberReduksi;
 
 class CallbackReduksi extends Controller
 {
@@ -17,19 +17,18 @@ class CallbackReduksi extends Controller
         $message = isset($jsondecode['message']) ? $jsondecode['message'] : "";
         $nipp = isset($jsondecode['nipp']) ? $jsondecode['nipp'] : "";
 
-        if (in_array("", [$requestdate, $code, $message, $nipp])) {
+        if (in_array("", [$code, $message, $nipp])) {
             return response()->json([
                 'code' => 400,
                 'status' => false,
                 'message' => "Gagal! Parameter tidak lengkap!"
             ]);
         }
-
-        $callbacksave = CallbackInfo::create([
-            'request_date' => $requestdate,
+        // untuk save
+       // $callbacksave = CallbackInfo::create([
+        $callbacksave = MemberReduksi::whereNipp($nipp)->update([
             'code' => $code,
-            'message' => $message,
-            'nipp' => $nipp
+            'message' => $message
         ]);
         
         return response()->json([

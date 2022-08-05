@@ -84,6 +84,8 @@ Route::prefix('user')->middleware(['auth:sanctum', 'role:user'])->group(function
 
 Route::middleware(['auth', 'role:administrator'])->group(function () {
 
+    Route::resource('MemberInputReduksi',InputMemberReduksiController::class);
+	
 	Route::get('employees', function () {
 		return view('livewire.admin.index');
 	})->name('admin.employees');
@@ -123,7 +125,7 @@ Route::controller(SalarySlipController::class)
 
     Route::resource('Berkas', BerkasController::class);
     Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
-    Route::resource('MemberInputReduksi',InputMemberReduksiController::class);
+    
     
     
     Route::resource('BerkasUser', BerkasControllerUser::class);
