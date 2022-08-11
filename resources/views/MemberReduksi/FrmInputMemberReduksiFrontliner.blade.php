@@ -14,7 +14,7 @@
                             @csrf
                             <div class="form-group">
                                     <label class="font-weight-bold">NIPP</label>
-                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->user_id) }}" readonly placeholder="Masukkan No NIPP">          
+                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->nip) }}" readonly placeholder="Masukkan No NIPP">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('nipp')
                                         <div class="alert alert-danger mt-2">
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Nama</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $blog->user->name) }}" readonly placeholder="Masukkan Nama">          
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $blog->name) }}" readonly placeholder="Masukkan Nama">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('name')
                                         <div class="alert alert-danger mt-2">
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Lahir</label>
-                                    <input type="text" class="form-control @error('birthofdate') is-invalid @enderror" name="birthofdate" value="{{ old('birthofdate', $blog->employee->tanggal_lahir) }}" readonly placeholder="Masukkan Tanggal Lahir">          
+                                    <input type="text" class="form-control @error('birthofdate') is-invalid @enderror" name="birthofdate" value="{{ old('birthofdate', $blog->birthday) }}" readonly placeholder="Masukkan Tanggal Lahir">          
                                     @error('birthofdate')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Alamat</label>
-                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address', $blog->address1) }} {{ old('address', $blog->address2) }}" readonly placeholder="Masukkan Alamat">          
+                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address', $blog->frontlineraddress->address) }} {{ old('address', $blog->address2) }}" readonly placeholder="Masukkan Alamat">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('address')
                                         <div class="alert alert-danger mt-2">
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $blog->user->email) }}" readonly placeholder="Masukkan Email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" readonly placeholder="Masukkan Email">
                                     @error('email')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">No Telepon</label>
-                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber', $blog->phone) }}" placeholder="Masukkan No Telepon">          
+                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber') }}" placeholder="Masukkan No Telepon">          
                                   <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('phonenumber')
                                         <div class="alert alert-danger mt-2">

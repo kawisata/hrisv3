@@ -252,7 +252,12 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                       >
-                    <a class="w-full" href="{{ route('MemberUpdateReduksi.index') }}">Update Member Reduksi</a>
+                    <a class="w-full" href="{{ route('MemberReduksiFrontliner.index') }}">Input Member Reduksi Frontliner</a>
+                  </li>
+                  <li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                      >
+                    <a class="w-full" href="{{ route('MemberReduksi.index') }}">Update Member Reduksi</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
