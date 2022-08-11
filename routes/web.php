@@ -29,6 +29,8 @@ use App\Http\Controllers\PdfCertificateController;
 use App\Http\Controllers\BerkasKontrakUserController;
 use App\Http\Controllers\UpdateMemberReduksiController;
 use App\Http\Controllers\InputMemberReduksiController;
+use App\Http\Controllers\MemberReduksiController;
+use App\Http\Controllers\InputMemberReduksiFronlinerController;
 
 
 use App\Http\Controllers\DocumentPphPribadiController;
@@ -85,7 +87,19 @@ Route::prefix('user')->middleware(['auth:sanctum', 'role:user'])->group(function
 Route::middleware(['auth', 'role:administrator'])->group(function () {
 
     Route::resource('MemberInputReduksi',InputMemberReduksiController::class);
+	Route::resource('Berkas', BerkasController::class);
+    Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
+    Route::resource('MemberReduksi',MemberReduksiController::class);
+	Route::resource('MemberReduksiFrontliner',InputMemberReduksiFronlinerController::class);
+    Route::resource('BerkasUser', BerkasControllerUser::class);
+    Route::resource('DaftarBerkas', DaftarBerkas::class);
+    Route::resource('ListKaryawan', BerkasKontrakUserController::class);
+    Route::resource('ListKontrak', ListKontrakController::class);
+	Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
+    Route::resource('DaftarKontrak', BerkasKontrakController::class);
+    Route::resource('API', KAI_APIController::class);
 	
+
 	Route::get('employees', function () {
 		return view('livewire.admin.index');
 	})->name('admin.employees');
@@ -122,19 +136,11 @@ Route::controller(SalarySlipController::class)
 	Route::get('salary-slip-all/{uuid}/{ttd}', 'all')->name('user.salary-slip-all');
 });
 
-
-    Route::resource('Berkas', BerkasController::class);
-    Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
-    
-    
-    
-    Route::resource('BerkasUser', BerkasControllerUser::class);
-    Route::resource('DaftarBerkas', DaftarBerkas::class);
-    Route::resource('ListKaryawan', BerkasKontrakUserController::class);
-    Route::resource('ListKontrak', ListKontrakController::class);
     Route::group(['prefix' => "list-kontrak"], function() {
         Route::get('/edit/{id}', [ListKontrakController::class, 'edit']);
     });
-    Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
-    Route::resource('DaftarKontrak', BerkasKontrakController::class);
-    Route::resource('API', KAI_APIController::class);
+	Route::prefix('MemberReduksi1')->group(function () {
+		
+		Route::get('/{id}', [\App\Http\Controllers\MemberReduksiController::class, 'edit'])->name('MemberReduksi1.edit');
+
+	});
