@@ -31,7 +31,8 @@ class InputMemberReduksiFronlinerController extends Controller
                       ->orWhere('nip', 'like',"%".$cari."%");
                     });
         }
-        $data['blogs']=$blogs->latest()->paginate(10);
+        //return $blogs->latest()->paginate(10);
+        $data['blogs'] = $blogs->latest()->paginate(10);
         return view('MemberReduksi.FrmListUserFrontliner', $data); 
 
    //     $blogs = MemberReduksiFronliner::with('frontlinerusers', 'frontlineraddress')->latest()->paginate(6);
@@ -40,14 +41,9 @@ class InputMemberReduksiFronlinerController extends Controller
     }
     public function edit($id)
     {
-        $blog = MemberReduksiFronliner::with('frontlinerusers', 'frontlineraddress')->where($id)->first();
+        $blog = MemberReduksiFronliner::with('frontlinerusers', 'frontlineraddress')->whereNip($id)->first();
         // return $blog;
         //dd($blog);
         return view('MemberReduksi.FrmInputMemberReduksiFrontliner', compact('blog'));
-
-
-        /*$blog = EmployeeModel::whereUserId($id)->first();
-        // return $blog;
-        return view('MemberReduksi.FrmInputMemberReduksi', compact('blog')); */
     }
 }

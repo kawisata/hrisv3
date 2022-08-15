@@ -171,7 +171,7 @@ class InputMemberReduksiController extends Controller
     public function store(Request $request)
     {
          $this->validate($request, [
-        //     'user_id'	        => 'required',
+             'user_id'	        => 'required',
              'nipp'              => 'required',
              'name'	            => 'required',
              'birthofdate'	    => 'required',
@@ -190,11 +190,11 @@ class InputMemberReduksiController extends Controller
              'employeetype'	    => 'required', 
          ]);
 
-        $check = MemberReduksi::whereIdnum($request->idnum)->count();
+       /* $check = MemberReduksi::whereIdnum($request->idnum)->count();
        
         if ($check>0) {
             return back()->with('alert', 'Pegawai Sudah Menjadi Member! Silakan Cek Pada Halaman Update Member Reduksi');
-        }
+        } */
         
         if ($request->gender==('Perempuan')) {
             $gender1 = ('2');
@@ -213,6 +213,7 @@ class InputMemberReduksiController extends Controller
         $blog = MemberReduksi::create([
             
             'nipp'              => $request->nipp.'KAWISTA',
+            'user_id'	        => $request->user_id,
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
@@ -232,9 +233,10 @@ class InputMemberReduksiController extends Controller
             'token'             => $request->_token,
            
         ]);
-     /*   $callbacksave = EmployeeModel::whereUserId($nipp)->update([
+     //   dd($blog);
+        $callbacksave = EmployeeModel::whereUserId($request->user_id)->update([
             'status_member' => 'Kki'
-        ]); */
+        ]); 
         $apibody = [
             'nipp'              => $request->nipp.'KAWISTA',
             'name'	            => $request->name,

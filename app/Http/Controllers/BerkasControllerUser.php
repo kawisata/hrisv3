@@ -24,6 +24,10 @@ class BerkasControllerUser extends Controller
     {
         return view('Berkas.create');
     }
+    public function show()
+    {
+        
+    }
 
 
     /**
