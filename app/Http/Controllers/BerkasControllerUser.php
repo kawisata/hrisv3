@@ -40,15 +40,11 @@ class BerkasControllerUser extends Controller
     {
        
         $blogs = Berkas::latest()->paginate(3);
-      
-
         $this->validate($request, [
             'berkas_kk'     => 'required|mimetypes:application/pdf|max:2000',
             'ktp'    => 'required|mimetypes:application/pdf|max:2000',
-            'ijazah' => 'required|mimetypes:application/pdf|max:2000',
-            
-           
-        ]);
+            'ijazah' => 'required|mimetypes:application/pdf|max:20',
+        ],['ijazah.required'=>'No Kontrak Kosong!']);
 
         //upload berkas
         $berkas_kk = $request->file('berkas_kk');
