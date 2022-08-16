@@ -34,6 +34,8 @@ use App\Http\Controllers\InputMemberReduksiFronlinerController;
 
 
 use App\Http\Controllers\DocumentPphPribadiController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Livewire\Employee\EventPresenceComponent;
 
 
 /*
@@ -67,7 +69,8 @@ Route::prefix('user')->middleware(['auth:sanctum', 'role:user'])->group(function
 	Route::get('employee-data', EmployeeStatus::class)->name('employee.data');
 	Route::get('employee-education', EmployeeEducation::class)->name('employee.education');
 	Route::get('employee-addresses', EmployeeAddress::class)->name('employee.addresses');
-
+	Route::get('event-presences', EventPresenceComponent::class)->name('event.presences');
+	Route::get('photo/{photo}', [PhotoController::class,'show'])->name('photo.show');
 	// Route::get('user-update',function () {return view('livewire.user.index-employee-update');})->name('user.update');
 
 	Route::delete('user-family/{user-family}', [UserFamilies::class, 'destroy'])->name('user-family.destroy');
