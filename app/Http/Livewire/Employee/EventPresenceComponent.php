@@ -13,6 +13,11 @@ class EventPresenceComponent extends Component
 {
 	use WithPerPagePagination, WithPagination;
 	public $search;
+
+	protected $listeners = [
+		'updatedata' => '$refresh',
+	];
+
 	public function loadNota()
 	{
 		sleep(rand(0, 1));

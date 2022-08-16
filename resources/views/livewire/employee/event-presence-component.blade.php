@@ -51,35 +51,36 @@
 								<tr @class([ 'hover:shadow-lg' , 'hover:bg-gray-200' , 'bg-gray-100' , 'text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-500
 									dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500
 									dark:focus:border-sky-500' , ])>
-									<td rowspan="3" class="flex w-max justify-start pt-2 pl-2 pr-1">
-										<div @class([ 'text-indigo-600' , 'text-gray-900 bg-gray-50 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700
-											dark:border-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500
-											dark:focus:border-sky-500' , ])>
+									<td class="p-2">
+										<p @class([ 'text-gray-800' , 'dark:text-gray-100' , 'w-full' , 'text-sm' , 'line-clamp-2' ])>
+											{{ $event->event->name }}
+										</p>
+										<div class="flex justify-between">
+											<div>
+												@php
+												$date1 = \Carbon\Carbon::now();
+												$date2 = $event->presence_at;
+												@endphp
+												@if ($date1->diffInDays($date2) > 3)
+												<span class="text-xs text-gray-500 dark:text-white md:text-sm">{{
+													\Carbon\Carbon::parse($event->presence_at)->translatedFormat('d F Y H:i:s') }}
+												</span>
+												@else
+												<span class="text-xs text-gray-500 dark:text-white md:text-sm">{{
+													\Carbon\Carbon::parse($event->presence_at)->diffForHumans() }}
+												</span>
+												@endif
+											</div>
 										</div>
 									</td>
-									<td class="pr-2 pt-2">
-										<button
-											wire:click.prevent='$emit("openModal", "employee.event-presence-photo-modal", {{ json_encode(["event" => $event])}})'>
-											<p @class([ 'text-gray-800' , 'dark:text-gray-100' , 'w-full' , 'text-sm' , 'line-clamp-2' ])>
-												{{ $event->event->name }}
-											</p>
-											<div class="flex justify-between">
-												<div>
-													@php
-													$date1 = \Carbon\Carbon::now();
-													$date2 = $event->presence_at;
-													@endphp
-													@if ($date1->diffInDays($date2) > 3)
-													<span class="text-xs text-gray-500 dark:text-white md:text-sm">{{
-														\Carbon\Carbon::parse($event->presence_at)->translatedFormat('d F Y H:i:s') }}
-													</span>
-													@else
-													<span class="text-xs text-gray-500 dark:text-white md:text-sm">{{
-														\Carbon\Carbon::parse($event->presence_at)->diffForHumans() }}
-													</span>
-													@endif
-												</div>
-											</div>
+									<td class=" text-right p-2">
+										<button type="button" wire:click.prevent='$emit("openModal", "employee.event-presence-photo-modal", {{ json_encode(["event" => $event])}})'
+											class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+											Lihat Foto
+											<span
+												class="inline-flex justify-center items-center ml-2 w-4 h-4 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+												{{ $event->event_photos->count() }}
+											</span>
 										</button>
 									</td>
 								</tr>
