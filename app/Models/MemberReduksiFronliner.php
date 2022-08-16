@@ -11,13 +11,9 @@ class MemberReduksiFronliner extends Model
     protected $connection = 'mysql2';
     protected $table = 'employees';
     protected $fillable = [
-        'nip','name','birthday','nik','kelamin' ];
+        'nip','name','birthday','nik','kelamin', 'status','email', 'status_member' ];
 
-    function frontlinerusers() {
-        return $this->hasOne(FrontlinerUsers::class, 'nip', 'nip');
-    }
-    
     function frontlineraddress() {
-        return $this->hasOne(FrontlinerAddress::class, 'nip', 'nip');
+        return $this->hasOne(FrontlinerAddress::class, 'employee_id', 'employee_id');
     }
 }
