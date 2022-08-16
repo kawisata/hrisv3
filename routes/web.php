@@ -91,6 +91,7 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
     Route::resource('MemberReduksi',MemberReduksiController::class);
 	Route::resource('MemberReduksiFrontliner',InputMemberReduksiFronlinerController::class);
+	
     Route::resource('BerkasUser', BerkasControllerUser::class);
     Route::resource('DaftarBerkas', DaftarBerkas::class);
     Route::resource('ListKaryawan', BerkasKontrakUserController::class);
