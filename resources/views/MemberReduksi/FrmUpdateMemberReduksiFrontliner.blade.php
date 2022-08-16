@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Halaman Update Member Reduksi
+        Halaman Update Member Reduksi Frontliner
         </h2>
     </x-slot>
     <div class="container mt-5 mb-5">
@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('MemberReduksi.update', $blog->id) }}" method="POST" enctype="multipart/form-data"> 
+                        <form action="{{ route('MemberReduksiFrontlinerUpdate.update', $blog->id) }}" method="POST" enctype="multipart/form-data"> 
                             @csrf
                             @method('PUT')
                             <div class="form-group">
