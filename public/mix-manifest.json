@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/welcome/main.js": "/welcome/main.js",
-    "/welcome/style.css": "/welcome/style.css",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=5ca487a97d317c50defb",
+    "/welcome/main.js": "/welcome/main.js?id=aaaa4b37cd4fa573a965",
+    "/welcome/style.css": "/welcome/style.css?id=d47b5b221c1ee23e5d8a",
+    "/css/app.css": "/css/app.css?id=42d0177c9fecf393a5d0"
 }
