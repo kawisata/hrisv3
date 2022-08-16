@@ -56,4 +56,9 @@ class EventPresencePhotoModal extends ModalComponent
 		$this->emit('updatedata');
 		$this->closeModal();
 	}
+
+	public function delete($id)
+	{
+		EventPhoto::find($id)->delete();
+	}
 	}
