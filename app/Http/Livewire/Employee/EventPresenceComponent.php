@@ -30,7 +30,7 @@ class EventPresenceComponent extends Component
 			->leftJoin('events', 'event_presences.event_id', '=', 'events.id')
 			->where('user_id', auth()->user()->id)
 			->where('events.name', 'like', '%' . $this->search . '%')
-			->paginate(6);
+			->paginate(7);
 		return view('livewire.employee.event-presence-component',compact('events'));
 	}
 
