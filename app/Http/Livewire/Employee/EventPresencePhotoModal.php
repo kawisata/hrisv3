@@ -28,7 +28,7 @@ class EventPresencePhotoModal extends ModalComponent
 	{
 		$events = EventPresence::find($this->event->id);
 		// $events = EventPhoto::where('event_presence_id', $this->event->id)->get();
-		return view('livewire.employee.event-presence-photo-modal',compact('events'));
+		return view('livewire.employee.event-presence-photo-modal', compact('events'));
 	}
 
 	protected static array $maxWidths = [
@@ -59,7 +59,13 @@ class EventPresencePhotoModal extends ModalComponent
 
 	public function delete($id)
 	{
-		EventPhoto::find($id)->delete();
+		$event_photos = EventPhoto::find($id);
+		$event_photos->delete();
+		$path = storage_path('app/photo' . $event_photos->photo_file);
+		if (File::exists($path)) {
+			File::delete($path);
+		}
+
 		$this->emit('updatedata');
 	}
-	}
+}

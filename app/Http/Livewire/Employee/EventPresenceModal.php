@@ -60,11 +60,13 @@ class EventPresenceModal extends ModalComponent
 		$dataValid = $this->validate(
 			[
 				'event_id' => 'required',
-				'photo_files.*' => 'required|image|mimes:mimes:jpg,jpeg,png,gif',
+				'photo_files.*' => 'required|image|mimes:mimes:jpg,jpeg,png,gif|max:12288',
 			],
 			[
+				'event_id.required' => 'Kegiatan Wajib diisi',
 				'photo_files.*.image' => 'file harus berupa foto',
 				'photo_files.*.mimes' => 'format file jpg, jpeg, png, gif',
+				'photo_files.*.max' => 'ukjuran foto maksimal 12 MB',
 			]
 		);
 
@@ -93,6 +95,6 @@ class EventPresenceModal extends ModalComponent
 				}
 			}
 
-		return redirect()->route('event.presences');
+		$this->close();
 		}
 	}
