@@ -22,7 +22,7 @@
                         <table class="table table-bordered">
                             <thead>
                               <tr>
-                                <th scope="col">NIK</th>
+                                <th scope="col">NIP</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Kelamin</th>
@@ -35,9 +35,9 @@
 
                               @forelse ($blogs as $blog)
                                 <tr>
-                                    <td>{!! $blog->nik !!}</td>
+                                    <td>{!! $blog->user_id !!}</td>
                                     <td>{!! $blog->name !!}</td>
-                                    <td>{!! $blog->address1 !!}</td>
+                                    <td>{!! $blog->address1 !!}{!! $blog->address2 !!}</td>
                                     <td>{!! $blog->kelamin !!}</td>
                                     <td>{!! $blog->pendidikan !!}</td>
                                     <td>{!! $blog->sekolah !!}</td>
