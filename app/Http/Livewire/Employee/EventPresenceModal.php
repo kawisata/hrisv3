@@ -62,7 +62,6 @@ class EventPresenceModal extends ModalComponent
 				'photo_files.*' => 'required|image|mimes:mimes:jpg,jpeg,png,gif',
 			],
 			[
-				// 'photo_files.*.max' => 'ukuran maksimal file 2 MB',
 				'photo_files.*.image' => 'file harus berupa foto',
 				'photo_files.*.mimes' => 'format file jpg, jpeg, png, gif',
 			]
@@ -76,16 +75,6 @@ class EventPresenceModal extends ModalComponent
 				'presence_at' => now()
 			]
 		);
-
-
-
-
-		// $fotos = Foto::where('nik', auth()->user()->nik)->first();
-		// $path = storage_path('app/' . $fotos->fullfoto);
-		// $img = Image::make($path);
-		// $img->resize(300, null, function ($constraint) {
-		// 	$constraint->aspectRatio();
-		// })->save($path);
 
 			foreach ($this->photo_files as $image) {
 				if ($image->isValid()) {

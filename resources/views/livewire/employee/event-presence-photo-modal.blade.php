@@ -15,15 +15,17 @@
 		</button>
 	</div>
 	<div class="grid grid-cols-2 md:grid-cols-3 overflow-y-auto p-2 gap-2">
-		@forelse($events->event_photos as $photo)
-		<div class="bg-white shadow-lg rounded-lg space-y-2 p-2 flex flex-col justify-between">
-			<img src="{{ route('photo.show', ['photo' => $photo->id]) }}" alt="{{ $photo->photo_file }}" class="w-auto">
-			<button type="button" wire:click.prevent="delete({{ $photo->id }})"
-				class=" w-fit py-2 px-3 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-				delete</button>
-		</div>
-		@empty
-		@endforelse
+		@if($events)
+			@forelse($events->event_photos as $photo)
+			<div class="bg-white shadow-lg rounded-lg space-y-2 p-2 flex flex-col justify-between">
+				<img src="{{ route('photo.show', ['photo' => $photo->id]) }}" alt="{{ $photo->photo_file }}" class="w-auto">
+				<button type="button" wire:click.prevent="delete({{ $photo->id }})"
+					class=" w-fit py-2 px-3 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+					delete</button>
+			</div>
+			@empty
+			@endforelse
+		@endif
 	</div>
 
 </div>

@@ -18,7 +18,7 @@ class EventPresencePhotoModal extends ModalComponent
 
 	public $iteration;
 	public $photo_files;
-	public $event, $events;
+	public $event;
 
 	public function mount(EventPresence $event)
 	{
@@ -26,10 +26,9 @@ class EventPresencePhotoModal extends ModalComponent
 	}
 	public function render()
 	{
-		$this->events = EventPresence::with('event','event_photos')
-			->where('event_id', $this->event->id)
-			->first();
-		return view('livewire.employee.event-presence-photo-modal');
+		$events = EventPresence::find($this->event->id);
+		// $events = EventPhoto::where('event_presence_id', $this->event->id)->get();
+		return view('livewire.employee.event-presence-photo-modal',compact('events'));
 	}
 
 	protected static array $maxWidths = [
