@@ -60,13 +60,13 @@ class EventPresenceModal extends ModalComponent
 		$dataValid = $this->validate(
 			[
 				'event_id' => 'required',
-				'photo_files.*' => 'required|image|mimes:mimes:jpg,jpeg,png,gif|max:2048',
+				'photo_files.*' => 'required|image|mimes:mimes:jpg,jpeg,png,gif|max:12048',
 			],
 			[
 				'event_id.required' => 'Kegiatan Wajib diisi',
 				'photo_files.*.image' => 'file harus berupa foto',
 				'photo_files.*.mimes' => 'format file jpg, jpeg, png, gif',
-				'photo_files.*.max' => 'ukuran foto maksimal 2 MB',
+				'photo_files.*.max' => 'ukuran foto maksimal 12 MB',
 			]
 		);
 
@@ -87,11 +87,11 @@ class EventPresenceModal extends ModalComponent
 				$event_presence->event_photos()->create([
 					'photo_file'            =>  'photo/' . $image_name,
 				]);
-					$imgx = Image::make($image->getRealPath());
-				// dd($imgx);
-					$imgx->resize(360, null, function ($constraint) {
-						$constraint->aspectRatio();
-					})->save($path . '/' . $image_name);
+					// $imgx = Image::make($image->getRealPath());
+					// $imgx->resize(360, null, function ($constraint) {
+					// 	$constraint->aspectRatio();
+					// })->save($path . '/' . $image_name);
+					$image->storeAs('photo', $image_name);
 				}
 			}
 
