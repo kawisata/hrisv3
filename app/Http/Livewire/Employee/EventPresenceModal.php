@@ -45,6 +45,7 @@ class EventPresenceModal extends ModalComponent
 	{
 		$this->emit('updatedata');
 		$this->closeModal();
+		return redirect()->route('event.presences');
 	}
 
 	public function render()
