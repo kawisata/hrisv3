@@ -16,7 +16,7 @@ class CreateEventPhotosTable extends Migration
 	{
 		Schema::create('event_photos', function (Blueprint $table) {
 			$table->id();
-			$table->foreignIdFor(EventPresence::class)->nullable();
+			$table->foreignIdFor(EventPresence::class)->constrained();
 			$table->string('photo_file')->nullable();
 			$table->timestamps();
 		});

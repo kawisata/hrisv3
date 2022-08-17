@@ -9,4 +9,9 @@ class EventPhoto extends Model
 {
 	protected $guarded = [];
 	use HasFactory;
+
+	public function eventpresence()
+	{
+		return $this->belongsTo(EventPresence::class);
+	}
 }

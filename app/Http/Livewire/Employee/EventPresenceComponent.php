@@ -31,9 +31,10 @@ class EventPresenceComponent extends Component
 
 	public function render()
 	{
-		$events = EventPresence::with('event')
+		$events = EventPresence::with('event','event_photos')
 			->leftJoin('events', 'event_presences.event_id', '=', 'events.id')
 			->where('user_id', auth()->user()->id)
+			->select('event_presences.*', 'events.name as event_name')
 			->where('events.name', 'like', '%' . $this->search . '%')
 			->paginate(7);
 		return view('livewire.employee.event-presence-component',compact('events'));

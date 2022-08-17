@@ -17,9 +17,9 @@ class CreateEventPresencesTable extends Migration
 	{
 		Schema::create('event_presences', function (Blueprint $table) {
 			$table->id();
-			$table->foreignIdFor(Event::class)->nullable();
+			$table->foreignIdFor(Event::class)->constrained();
 			$table->foreignIdFor(User::class)->nullable();
-			$table->dateTime('presence_at')->nullable();
+			$table->dateTime('presence_at');
 			$table->timestamps();
 		});
 	}
