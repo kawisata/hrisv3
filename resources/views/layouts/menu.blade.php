@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
 
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
@@ -277,7 +276,7 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                       >
-                  <!--  <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a> -->
+                  <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a> 
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
