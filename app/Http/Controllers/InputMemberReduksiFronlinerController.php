@@ -170,7 +170,7 @@ class InputMemberReduksiFronlinerController extends Controller
                       ->orWhere('nip', 'like',"%".$cari."%");
                     });
         }
-        //return $blogs->latest()->paginate(3);
+       // return $blogs->latest()->paginate(3);
         $data['blogs'] = $blogs->latest()->paginate(10);
         return view('MemberReduksi.FrmListUserFrontliner', $data); 
 
@@ -181,6 +181,7 @@ class InputMemberReduksiFronlinerController extends Controller
     public function edit($id)
     {
         $blog = MemberReduksiFronliner::with('frontlineraddress')->whereId($id)->first();
+        //$blog = MemberReduksiFronliner::whereId($id)->first();
         //$blog = FrontlinerAddress::latest();
         //return $blog;
         //dd($blog);

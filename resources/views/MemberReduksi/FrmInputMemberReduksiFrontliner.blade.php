@@ -14,7 +14,7 @@
                             @csrf
                             <div class="form-group">
                                     <label class="font-weight-bold">NIPP</label>
-                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->id) }}" readonly placeholder="Masukkan No NIPP">          
+                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->name) }}" readonly placeholder="Masukkan No NIPP">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('nipp')
                                         <div class="alert alert-danger mt-2">
