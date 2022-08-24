@@ -22,8 +22,8 @@ class InputMemberReduksiController extends Controller
         $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
 
         $blogs = DB::table('employee_details')
-        ->leftJoin('users', 'employee_details.user_id', '=', 'users.id');
-       // ->where('employee_details.status_member', '=', 'Belum Member');
+        ->leftJoin('users', 'employee_details.user_id', '=', 'users.id')
+        ->where('employee_details.status_member', '=', 'Belum Member');
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('users.name','like',"%".$cari."%")

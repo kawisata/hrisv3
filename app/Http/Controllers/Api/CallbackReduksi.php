@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MemberReduksi;
+use App\Models\MemberReduksiInputFrontliner;
+
 
 class CallbackReduksi extends Controller
 {
@@ -30,7 +32,10 @@ class CallbackReduksi extends Controller
             'code' => $code,
             'message' => $message
         ]);
-        
+        $callbacksave = MemberReduksiInputFrontliner::whereNipp($nipp)->update([
+            'code' => $code,
+            'message' => $message
+        ]);
         return response()->json([
             'code' => 200,
             'status' => true,
