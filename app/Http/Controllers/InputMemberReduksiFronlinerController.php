@@ -163,7 +163,7 @@ class InputMemberReduksiFronlinerController extends Controller
        $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
 
        $blogs = MemberReduksiFronliner::with('frontlineraddress')
-       ->where('Active', '=', '1');
+       ->where('Active', '=', '1')->orWhere('status_member', '=', 'Belum Member');
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('name','like',"%".$cari."%")
@@ -183,7 +183,7 @@ class InputMemberReduksiFronlinerController extends Controller
         $blog = MemberReduksiFronliner::with('frontlineraddress')->whereId($id)->first();
         //$blog = MemberReduksiFronliner::whereId($id)->first();
         //$blog = FrontlinerAddress::latest();
-        //return $blog;
+        return $blog;
         //dd($blog);
         return view('MemberReduksi.FrmInputMemberReduksiFrontliner', compact('blog'));
     }
