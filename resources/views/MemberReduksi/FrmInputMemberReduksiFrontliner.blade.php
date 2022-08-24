@@ -10,11 +10,11 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('MemberInputReduksi.store') }}" method="POST" enctype="multipart/form-data">                  
+                        <form action="{{ route('MemberReduksiFrontliner.store') }}" method="POST" enctype="multipart/form-data">                  
                             @csrf
                             <div class="form-group">
                                     <label class="font-weight-bold">NIPP</label>
-                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->nip) }}" readonly placeholder="Masukkan No NIPP">          
+                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->name) }}" readonly placeholder="Masukkan No NIPP">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('nipp')
                                         <div class="alert alert-danger mt-2">
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Alamat</label>
-                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address', $blog->frontlineraddress->address) }} {{ old('address', $blog->address2) }}" readonly placeholder="Masukkan Alamat">          
+                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('') }} {{ old('address', $blog->address2) }}"  placeholder="Masukkan Alamat">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('address')
                                         <div class="alert alert-danger mt-2">
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" readonly placeholder="Masukkan Email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $blog->email) }}"  placeholder="Masukkan Email">
                                     @error('email')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
@@ -148,6 +148,7 @@
                                 </div>
                                 <input type="hidden" name="duration" value="0">
                                 <input type="hidden" name="idtype" value="1">
+                                <input type="hidden" name="employee_id" value="{{ old('id', $blog->id) }}">
                                 <input type="hidden" name="requestdate" value="{{Carbon\Carbon::now()->format('Y-m-d')}}" />
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tipe Karyawan</label>

@@ -30,6 +30,7 @@ use App\Http\Controllers\BerkasKontrakUserController;
 use App\Http\Controllers\UpdateMemberReduksiController;
 use App\Http\Controllers\InputMemberReduksiController;
 use App\Http\Controllers\MemberReduksiController;
+use App\Http\Controllers\MemberReduksiFrontlinerController;
 use App\Http\Controllers\InputMemberReduksiFronlinerController;
 
 
@@ -93,7 +94,9 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
 	Route::resource('Berkas', BerkasController::class);
     Route::resource('MemberUpdateReduksi',UpdateMemberReduksiController::class);
     Route::resource('MemberReduksi',MemberReduksiController::class);
+	Route::resource('MemberReduksiFrontlinerUpdate',MemberReduksiFrontlinerController::class);
 	Route::resource('MemberReduksiFrontliner',InputMemberReduksiFronlinerController::class);
+	
     Route::resource('BerkasUser', BerkasControllerUser::class);
     Route::resource('DaftarBerkas', DaftarBerkas::class);
     Route::resource('ListKaryawan', BerkasKontrakUserController::class);

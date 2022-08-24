@@ -30,6 +30,11 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">Berkas KK (Kartu Keluarga) &emsp;&emsp;&emsp;&emsp;&emsp; :</label> 
                                 <input type="file" name="berkas_kk"> </br>
+                                @error('berkas_kk')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                @enderror
                                 <div></div>
                                 <div class="text-center" style="display:{{ ($blog->berkas_kk) ? 'block' : 'none' }}">
                                     <center>
@@ -41,6 +46,11 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">Berkas KTP (Kartu Tanda Penduduk) &emsp;: </label>  
                                 <input type="file" name="ktp">
+                                @error('ktp')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                @enderror
                                 <div class="text-center" style="display:{{ ($blog->ktp) ? 'block' : 'none' }}">
                                     <center>
                                     <embed src="{{ Storage::url('public/blogs/').$blog->ktp }}" class="rounded" style="width: 300px">
@@ -51,11 +61,18 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">Berkas Ijazah &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</label>
                                 <input type="file" name="ijazah">
+                              <!--  <x-jet-input-error for="ijazah" class="mt-2" /> -->
+                                @error('ijazah')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                @enderror
                                 <div class="text-center" style="display:{{ ($blog->ijazah) ? 'block' : 'none' }}">
                                     <center>    
                                     <embed src="{{ Storage::url('public/blogs/').$blog->ijazah }}" class="rounded" style="width: 300px">
                                     </center>
                                 </div>
+                              
                             </div>
                             </br>
                             <div class="text-center">
@@ -100,4 +117,5 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </x-app-layout>

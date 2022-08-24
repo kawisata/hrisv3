@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\Http;
 Use Illuminate\Routing\ResponseFactory;
 use Illuminate\Http\Response;
@@ -9,45 +8,58 @@ use Illuminate\Http\Request;
 use App\Models\Berkas;
 use App\Models\EmployeeModel;
 use App\Models\MemberReduksi;
-use App\Models\MemberReduksiFronliner;
-use App\Models\MemberReduksiInputFrontliner;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-use App\Models\FrontlinerAddress;
+use App\Models\MemberReduksiInputFrontliner;
 use Illuminate\Support\Facades\Storage;
 use Auth;
 use DB;
 use Carbon\Carbon; 
 use Curl;
 
-class InputMemberReduksiFronlinerController extends Controller
-{
-    public function store(Request $request)
-    {
-         $this->validate($request, [
-             'employee_id'	        => 'required',
-             'nipp'              => 'required',
-             'name'	            => 'required',
-             'birthofdate'	    => 'required',
-             'phonenumber'	    => 'required',
-             'gender'	        => 'required',
-             'address'	        => 'required',
-             'reductiontypecode'	=> 'required',
-        //     'reductiontypeid'	=> 'required', 
-             'cityid'            => 'required',
-             'idnum'	            => 'required',
-        //     'startdate'	        => 'required',
-             'enddate'	        => 'required', 
-             'duration'          => 'required',
-             'email'	            => 'required',
-             'idtype'	        => 'required',
-             'employeetype'	    => 'required', 
-         ]);
 
-       /* $check = MemberReduksi::whereIdnum($request->idnum)->count();
-       
-        if ($check>0) {
-            return back()->with('alert', 'Pegawai Sudah Menjadi Member! Silakan Cek Pada Halaman Update Member Reduksi');
-        } */
-        
+class MemberReduksiFrontlinerController extends Controller
+{
+    public function index()
+    {
+      
+       $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
+
+       $blogs = MemberReduksiInputFrontliner::latest();
+       //->where('Active', '=', '1');
+        if ($cari) {
+            $blogs=$blogs->where(function ($query) use ($cari) {
+                $query->where('name','like',"%".$cari."%")
+                      ->orWhere('nipp', 'like',"%".$cari."%");
+                    });
+        }
+        //return $blogs->latest()->paginate(3);
+        $data['blogs'] = $blogs->latest()->paginate(10);
+        return view('MemberReduksi.FrmListUserUpdateFrontliner', $data); 
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+           
+            'nipp'              => 'required',
+            'name'	            => 'required',
+            'birthofdate'	    => 'required',
+            'phonenumber'	    => 'required',
+            'gender'	        => 'required',
+            'address'	        => 'required',
+            'reductiontypecode'	=> 'required',
+            //'reductiontypeid'	=> 'required', 
+            'cityid'            => 'required',
+            'idnum'	            => 'required',
+            //'requestdate'	    => 'required',
+            'startdate'	        => 'required',
+            'enddate'	        => 'required', 
+            'duration'          => 'required',
+            'email'	            => 'required',
+            'idtype'	        => 'required',
+            'employeetype'	    => 'required', 
+        ]);
+
+        //get data Blog by ID
+        //$reductiontypeid1;
         if ($request->gender==('2')) {
             $gender1 = ('2');
         } 
@@ -61,11 +73,11 @@ class InputMemberReduksiFronlinerController extends Controller
             case 'SUBSIDIARY75': $reductiontypeid1 = ('263');
             break;
         }
+       
+        $blog = MemberReduksiInputFrontliner::findOrFail($id);
         $currentTime = Carbon::now();
-        $blog = MemberReduksiInputFrontliner::create([
-            
-            'nipp'              => $request->nipp.'KAWISTA',
-            'employee_id'	    => $request->employee_id,
+        $arr = [
+            'nipp'              => $request->nipp,
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
@@ -84,13 +96,11 @@ class InputMemberReduksiFronlinerController extends Controller
             'employeetype'	    => $request->employeetype,
             'token'             => $request->_token,
            
-        ]);
-     //   dd($blog);
-        $callbacksave = MemberReduksiFronliner::whereId($request->employee_id)->update([
-            'status_member' => 'Member'
-        ]); 
+        ];
+      //  dd($arr);
+
         $apibody = [
-            'nipp'              => $request->nipp.'KAWISTA',
+            'nipp'              => $request->nipp,
             'name'	            => $request->name,
             'birthofdate'	    => $request->birthofdate,
             'phonenumber'	    => $request->phonenumber,
@@ -108,7 +118,7 @@ class InputMemberReduksiFronlinerController extends Controller
             'idtype'	        => $request->idtype,
             'employeetype'	    => $request->employeetype,
             ];
-
+        //    dd($apibody);
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
@@ -121,7 +131,7 @@ class InputMemberReduksiFronlinerController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS =>'[{
-            "nipp": "'.$request->nipp.'KAWISTA'.'",
+            "nipp": "'.$request->nipp.'",
             "name": "'.$request->name.'",
             "birthofdate": "'.$request->birthofdate.'",
             "phonenumber": "'.$request->phonenumber.'",
@@ -151,40 +161,19 @@ class InputMemberReduksiFronlinerController extends Controller
         $result = json_decode($result, true);
         
         if ($result['status'] == 00) {
+            $blog->update($arr);
             return back()->with('alert', 'Data Member Telah DiProses!');
             //return "Succes!";
         } else {
             return back()->with('alert', 'Proses Data Gagal!');
         }
     }
-    public function index()
-    {
-      
-       $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
-
-       $blogs = MemberReduksiFronliner::with('frontlineraddress')
-       ->where('Active', '=', '1');
-        if ($cari) {
-            $blogs=$blogs->where(function ($query) use ($cari) {
-                $query->where('name','like',"%".$cari."%")
-                      ->orWhere('nip', 'like',"%".$cari."%");
-                    });
-        }
-       // return $blogs->latest()->paginate(3);
-        $data['blogs'] = $blogs->latest()->paginate(10);
-        return view('MemberReduksi.FrmListUserFrontliner', $data); 
-
-   //     $blogs = MemberReduksiFronliner::with('frontlinerusers', 'frontlineraddress')->latest()->paginate(6);
-       // return $blogs;
-   //     return view('MemberReduksi.FrmListUserFrontliner', compact('blogs'));
-    }
+    
     public function edit($id)
     {
-        $blog = MemberReduksiFronliner::with('frontlineraddress')->whereId($id)->first();
-        //$blog = MemberReduksiFronliner::whereId($id)->first();
-        //$blog = FrontlinerAddress::latest();
-        //return $blog;
+        $blog = MemberReduksiInputFrontliner::find($id);
         //dd($blog);
-        return view('MemberReduksi.FrmInputMemberReduksiFrontliner', compact('blog'));
+        return view('MemberReduksi.FrmUpdateMemberReduksiFrontliner', compact('blog'));
     }
 }
+

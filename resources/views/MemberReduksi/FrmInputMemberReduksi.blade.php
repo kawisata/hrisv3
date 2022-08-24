@@ -148,6 +148,8 @@
                                 </div>
                                 <input type="hidden" name="duration" value="0">
                                 <input type="hidden" name="idtype" value="1">
+                                <input type="hidden" name="user_id" value="{{ old('user_id', $blog->user_id) }}">
+                                
                                 <input type="hidden" name="requestdate" value="{{Carbon\Carbon::now()->format('Y-m-d')}}" />
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tipe Karyawan</label>

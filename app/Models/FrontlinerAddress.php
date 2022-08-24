@@ -9,7 +9,7 @@ class FrontlinerAddress extends Model
 {
     use HasFactory;
     protected $connection = 'mysql2';
-    protected $table = 'user_addresses';
+    protected $table = 'employee_addresses';
     protected $fillable = [
-        'address' ,'nip' ];
+        'address' ,'employee_id' ];
 }
