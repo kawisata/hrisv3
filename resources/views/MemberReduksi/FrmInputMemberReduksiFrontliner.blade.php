@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Alamat</label>
-                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('') }} {{ old('address', $blog->address2) }}"  placeholder="Masukkan Alamat">          
+                                    <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('') }} {{ old('address', $blog->frontlineraddress->address) }}"  readonly placeholder="Masukkan Alamat">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('address')
                                         <div class="alert alert-danger mt-2">
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $blog->email) }}"  placeholder="Masukkan Email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $blog->email) }}"  readonly placeholder="Masukkan Email">
                                     @error('email')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">No Telepon</label>
-                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber') }}" placeholder="Masukkan No Telepon">          
+                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber', $blog->frontlineraddress->phonenumber) }}" placeholder="Masukkan No Telepon">          
                                   <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('phonenumber')
                                         <div class="alert alert-danger mt-2">
@@ -154,9 +154,9 @@
                                     <label class="font-weight-bold">Tipe Karyawan</label>
                                     <select name="employeetype" class="form-control" id="employeetype">
                                         <option value="">Pilih Tipe Karyawan</option>
-                                        <option value="WD" @if (old('employeetype') == "WD") {{ 'selected' }} @endif>KAWISTA DIREKSI</option>
+                                        <option value="WD" @if (old('employeetype') == "WD") {{ 'selected' }} @endif>KAWISATA DIREKSI</option>
                                         <option value="WK" @if (old('employeetype') == "WK") {{ 'selected' }} @endif>KAWISATA KONTRAK</option>
-                                        <option value="WM" @if (old('employeetype') == "WM") {{ 'selected' }} @endif>KAWISTA MANDIRI</option>
+                                        <option value="WM" @if (old('employeetype') == "WM") {{ 'selected' }} @endif>KAWISATA MANDIRI</option>
                                     </select>
                                     @error('employeetype')
                                         <div class="alert alert-danger mt-2">

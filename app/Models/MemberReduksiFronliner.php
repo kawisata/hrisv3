@@ -17,7 +17,7 @@ class MemberReduksiFronliner extends Model
         return $this->hasOne(UserFrontliner::class, 'id', 'employee_id');
         }
     function frontlineraddress() {
-        return $this->hasOne(FrontlinerAddress::class, 'employee_id', 'employee_id');
+        return $this->hasOne(FrontlinerAddress::class, 'employee_id', 'id');
     }
 }
 
