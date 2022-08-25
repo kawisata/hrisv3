@@ -167,7 +167,7 @@ class InputMemberReduksiFronlinerController extends Controller
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('name','like',"%".$cari."%")
-                      ->orWhere('nip', 'like',"%".$cari."%");
+                      ->orWhere('id', 'like',"%".$cari."%");
                     });
         }
 //   return $blogs->latest()->paginate(3);
