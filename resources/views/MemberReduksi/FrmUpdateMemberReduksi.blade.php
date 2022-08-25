@@ -153,9 +153,9 @@
                                     <label class="font-weight-bold">Tipe Karyawan</label>
                                     <select name="employeetype" class="form-control" id="employeetype">
                                         <option value="">Pilih Tipe Karyawan</option>
-                                        <option value="WD" @if (old('employeetype') == "WD") {{ 'selected' }} @endif>KAWISTA DIREKSI</option>
+                                        <option value="WD" @if (old('employeetype') == "WD") {{ 'selected' }} @endif>KAWISATA DIREKSI</option>
                                         <option value="WK" @if (old('employeetype') == "WK") {{ 'selected' }} @endif>KAWISATA KONTRAK</option>
-                                        <option value="WM" @if (old('employeetype') == "WM") {{ 'selected' }} @endif>KAWISTA MANDIRI</option>
+                                        <option value="WM" @if (old('employeetype') == "WM") {{ 'selected' }} @endif>KAWISATA MANDIRI</option>
                                     </select>
                                     @error('employeetype')
                                         <div class="alert alert-danger mt-2">

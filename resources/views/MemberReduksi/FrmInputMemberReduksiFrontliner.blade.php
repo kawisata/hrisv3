@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">No Telepon</label>
-                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber', $blog->frontlineraddress->phonenumber) }}" readonly placeholder="Masukkan No Telepon">          
+                                    <input type="number" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ old('phonenumber', $blog->frontlineraddress->phonenumber) }}" placeholder="Masukkan No Telepon">          
                                   <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('phonenumber')
                                         <div class="alert alert-danger mt-2">
