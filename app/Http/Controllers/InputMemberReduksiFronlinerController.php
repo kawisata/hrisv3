@@ -163,7 +163,7 @@ class InputMemberReduksiFronlinerController extends Controller
        $cari = (!empty($_GET['cari'])) ? $_GET['cari'] : "";
 
        $blogs = MemberReduksiFronliner::with('frontlineraddress')
-       ->where('Active', '=', '1')->orWhere('status_member', '=', 'Belum Member');
+       ->where('status_member', '=', 'Belum Member');
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('name','like',"%".$cari."%")
