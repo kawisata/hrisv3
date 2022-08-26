@@ -182,7 +182,7 @@ class InputMemberReduksiController extends Controller
         //     'reductiontypeid'	=> 'required', 
              'cityid'            => 'required',
              'idnum'	            => 'required',
-        //     'startdate'	        => 'required',
+             'startdate'	        => 'required',
              'enddate'	        => 'required', 
              'duration'          => 'required',
              'email'	            => 'required',
