@@ -235,7 +235,7 @@ class InputMemberReduksiController extends Controller
         ]);
      //   dd($blog);
         $callbacksave = EmployeeModel::whereUserId($request->user_id)->update([
-            'status_member' => 'Kki'
+            'status_member' => 'Member'
         ]); 
         $apibody = [
             'nipp'              => $request->nipp.'KAWISTA',

@@ -26,6 +26,7 @@
                                 <th scope="col">Nama</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Kelamin</th>
+                                <th scope="col">Status Member</th>
                                 <!--<th scope="col">Sekolah</th> -->
                                 <th scope="col">Aksi</th>
                               </tr>
@@ -38,6 +39,11 @@
                                     <td>{!! $blog->name !!}</td>
                                     <td>{!! $blog->address1 !!}</td>
                                     <td>{!! $blog->kelamin !!}</td>
+                                    <td> @if ($blog->code == '00')
+                                        <p class="text">Sukses</p>
+                                        @else
+                                        <span style="color: red;">Gagal</span>
+                                        @endif</td>
                                     <!-- <td>{!! $blog->sekolah !!}</td> -->
                                     <td class="text-center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('Berkas.destroy', $blog->id) }}" method="POST"> 
