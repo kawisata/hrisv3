@@ -9,7 +9,7 @@ class MemberReduksiInputFrontliner extends Model
 {
     use HasFactory;
     protected $connection = 'mysql2';
-    protected $table = 'member_reduksi';
+    protected $table = 'member_reduksi_frontliner';
     protected $fillable = [
         'employee_id','nipp','name','birthofdate','phonenumber','gender','address','reductiontypecode',
         'reductiontypeid','cityid','idnum','requestdate','startdate','enddate','duration',
