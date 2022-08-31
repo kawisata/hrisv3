@@ -100,7 +100,7 @@
                                         </div>
                                     @enderror 
                                 </div>
-                                <div class="form-group">
+                               <!-- <div class="form-group">
                                     <label class="font-weight-bold">Tipe Reduksi</label>
                                     <select name="reductiontypecode" class="form-control" id="reductiontypecode">
                                         <option value="">Pilih Tipe Reduksi</option>
@@ -112,7 +112,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror 
-                                </div> 
+                                </div> -->
                                <!-- <div class="form-group">
                                     <label class="font-weight-bold">ID Reduksi</label>
                                     <select name="reductiontypeid" class="form-control" id="reductiontypeid">
@@ -149,7 +149,9 @@
                                 <input type="hidden" name="duration" value="0">
                                 <input type="hidden" name="idtype" value="1">
                                 <input type="hidden" name="requestdate" value="{{Carbon\Carbon::now()->format('Y-m-d')}}" />
-                                <div class="form-group">
+                                <input type="hidden" name="reductiontypecode" value="SUBSIDIARY50">
+                                <input type="hidden" name="employeetype" value="WK">
+                                <!--<div class="form-group">
                                     <label class="font-weight-bold">Tipe Karyawan</label>
                                     <select name="employeetype" class="form-control" id="employeetype">
                                         <option value="">Pilih Tipe Karyawan</option>
@@ -162,7 +164,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror 
-                                </div>
+                                </div> -->
                             <div class="text-center">
                                 <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" wire:loading.attr="disabled">UPDATE</button>
                             </div> 
