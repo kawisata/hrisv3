@@ -32,6 +32,8 @@ use App\Http\Controllers\InputMemberReduksiController;
 use App\Http\Controllers\MemberReduksiController;
 use App\Http\Controllers\MemberReduksiFrontlinerController;
 use App\Http\Controllers\InputMemberReduksiFronlinerController;
+use App\Http\Controllers\importdateController;
+
 
 
 use App\Http\Controllers\DocumentPphPribadiController;
@@ -61,6 +63,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('document-pph/{nik}/{nip}', [DocumentPphController::class, 'show'])->name('user.document-pph');
 
 Route::prefix('user')->middleware(['auth:sanctum', 'role:user'])->group(function () {
+
+    Route::resource('BerkasUser', BerkasControllerUser::class);
+    Route::resource('DaftarBerkas', DaftarBerkas::class);
+	Route::resource('DaftarKontrak', BerkasKontrakController::class);
+
 
 	Route::delete('user-family/{user-family}', [UserFamilies::class, 'destroy'])->name('user-family.destroy');
 	Route::get('families', function () {
@@ -96,13 +103,12 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::resource('MemberReduksi',MemberReduksiController::class);
 	Route::resource('MemberReduksiFrontlinerUpdate',MemberReduksiFrontlinerController::class);
 	Route::resource('MemberReduksiFrontliner',InputMemberReduksiFronlinerController::class);
+	Route::resource('ImportDate',importdateController::class);
 	
-    Route::resource('BerkasUser', BerkasControllerUser::class);
-    Route::resource('DaftarBerkas', DaftarBerkas::class);
+
     Route::resource('ListKaryawan', BerkasKontrakUserController::class);
     Route::resource('ListKontrak', ListKontrakController::class);
 	Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
-    Route::resource('DaftarKontrak', BerkasKontrakController::class);
     Route::resource('API', KAI_APIController::class);
 	
 
