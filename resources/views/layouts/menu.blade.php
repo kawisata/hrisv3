@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
-          <div class="py-4 text-gray-500 dark:text-gray-400">
+        <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
@@ -17,10 +17,8 @@
 
               <!-- Add this classes to an active anchor (a tag) -->
               <!-- text-gray-800 dark:text-gray-100 -->
-              <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../dashboard"
-              >
+              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../dashboard">
                 <svg
                   class="w-5 h-5"
                   aria-hidden="true"
@@ -81,20 +79,20 @@
                     </span>
                 </li>
 
-        <!--   <li class="relative px-6 py-3">
-                    <span class="">
-                                <x-jet-nav-link href="{{ route('employee.data') }}" :active="request()->routeIs('employee.data')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                    </svg>
+                    <!--   <li class="relative px-6 py-3">
+                                <span class="">
+                                            <x-jet-nav-link href="{{ route('employee.data') }}" :active="request()->routeIs('employee.data')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
 
-                                <div class="ml-4">
-                                    {{ __('Data Pribadi') }}
-                                </div>
-                                </x-jet-nav-link>
-                    </span>
-                </li>
-      -->
+                                            <div class="ml-4">
+                                                {{ __('Data Pribadi') }}
+                                            </div>
+                                            </x-jet-nav-link>
+                                </span>
+                            </li>
+                  -->
             <li class="relative px-6 py-3">
               <span class="">
                 <button
@@ -121,7 +119,7 @@
                     ></path>
                   </svg>
                 </button>
-            </span>
+              </span>
               <template x-if="isPagesMenuOpen">
                 <ul
                   x-transition:enter="transition-all ease-in-out duration-300"
@@ -133,23 +131,17 @@
                   class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('employee.data') }}">Data Diri</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('BerkasUser.edit', Auth::user()->id) }}">Input/Ubah Berkas</a>
                   </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                        >
-                      <a class="w-full" href="{{ route('DaftarBerkas.index') }}">Berkas Data Diri </a>
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                    <a class="w-full" href="{{ route('DaftarBerkas.index') }}">Berkas Data Diri </a>
                   </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                        >
-                      <a class="w-full" href="{{ route('DaftarKontrak.index') }}">Daftar Berkas Kontrak</a>
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                    <a class="w-full" href="{{ route('DaftarKontrak.index') }}">Daftar Berkas Kontrak</a>
                   </li>
                 </ul>
 
@@ -234,69 +226,43 @@
                   class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('Berkas.index') }}">Daftar Permintaan Berkas</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('ListKaryawan.index') }}">input Berkas Kontrak</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('MemberInputReduksi.index') }}">Input Member Reduksi</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('MemberReduksiFrontliner.index') }}">Input Member Reduksi Frontliner</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('MemberReduksi.index') }}">Update Member Reduksi</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
-                  <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a> 
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                    <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a> 
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
-                  <a class="w-full" href="{{ route('ImportDate.index') }}">Import Excel Member Reduksi Frontliner</a> 
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                    <a class="w-full" href="{{ route('ImportDate.index') }}">Import Excel Member Reduksi Frontliner</a> 
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('admin.salaries') }}">Import Slip Gaji</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('admin.salary-slip') }}">Admin Slip Gaji Pekerja</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('users') }}">Edit User</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('positions') }}">Edit Jabatan</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('user-admin') }}">User Admin</a>
                   </li>
-                  <li
-                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                      >
+                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('position-admin') }}">Position Admin</a>
                   </li>
                 </ul>
@@ -313,3 +279,4 @@
             </button>
           </div> --}}
         </div>
+

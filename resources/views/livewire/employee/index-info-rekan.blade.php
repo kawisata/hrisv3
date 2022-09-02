@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-blank>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-white leading-tight">
             {{ __('Info Rekan') }}
@@ -16,4 +16,4 @@
           </div>
         </main>
 
-</x-app-layout>
+</x-app-blank>

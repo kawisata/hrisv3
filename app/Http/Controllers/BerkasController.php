@@ -28,7 +28,7 @@ class BerkasController extends Controller
         if ($cari) {
             $blogs=$blogs->where(function ($query) use ($cari) {
                 $query->where('users.name','like',"%".$cari."%")
-                      ->orWhere('employee_details.nik', 'like',"%".$cari."%");
+                      ->orWhere('employee_details.user_id', 'like',"%".$cari."%");
                     });
         }
 
