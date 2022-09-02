@@ -16,8 +16,6 @@
         @livewireStyles
         @powerGridStyles
 
-
-
     </head>
 
     <body>
@@ -29,7 +27,13 @@
 
                 <main class="h-full pb-16 overflow-y-auto px-2 md:px-4">
                             <!-- Page Heading -->
-
+                @if (isset($header))
+					<header class="bg-white shadow dark:bg-gray-700">
+						<div class="mx-auto max-w-7xl py-6 px-4 md:px-6 lg:px-8">
+							{{ $header }}
+						</div>
+					</header>
+				@endif
                     <!-- Page Content -->
                     <main>
                         {{ $slot }}

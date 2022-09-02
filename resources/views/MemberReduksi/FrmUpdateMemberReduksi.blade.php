@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-blank>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         Halaman Update Member Reduksi
@@ -179,4 +179,4 @@
             alert(msg);
         }
     </script>
-</x-app-layout>
+</x-app-blank>
