@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div> -->
+                            <p>NOTE : Upload berkas dengan format PDF dan Size MAX 2 MB</p>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">Berkas KK (Kartu Keluarga) &emsp;&emsp;&emsp;&emsp;&emsp; :</label> 
