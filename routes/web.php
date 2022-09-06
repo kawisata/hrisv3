@@ -33,6 +33,7 @@ use App\Http\Controllers\MemberReduksiController;
 use App\Http\Controllers\MemberReduksiFrontlinerController;
 use App\Http\Controllers\InputMemberReduksiFronlinerController;
 use App\Http\Controllers\importdateController;
+use App\Http\Controllers\ImportFrontliner;
 
 
 
@@ -106,8 +107,11 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::resource('ListKaryawan', BerkasKontrakUserController::class);
     Route::resource('ListKontrak', ListKontrakController::class);
 	Route::get('/ListKaryawan/cari', [BerkasKontrakUserController::class, 'cari'])->name('cari');
-    Route::resource('API', KAI_APIController::class);
-	
+    //Route::resource('API', KAI_APIController::class);
+
+	Route::post('/Frontliner/import_excel', [ImportFrontliner::class, 'import_excel']);
+	//Route::resource('Frontliner', ImportFrontliner::class);
+
 
 	Route::get('employees', function () {
 		return view('livewire.admin.index');

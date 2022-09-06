@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Jenis Kelamin</label>
-                                    <input type="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender', $blog->kelamin) }}" readonly placeholder="Masukkan No Jenis Kelamin">          
+                                    <input type="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ ($blog->kelamin == 1) ? 'Laki-laki' : 'Perempuan' }}" readonly placeholder="Masukkan No Jenis Kelamin">          
                                   <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('gender')
                                         <div class="alert alert-danger mt-2">
@@ -129,10 +129,9 @@
                                     @enderror 
                                 </div> -->
                                 <input type="hidden" name="cityid" value="0">
-                                
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Aktif Keanggotaan</label>
-                                    <input type="date" class="form-control @error('startdate') is-invalid @enderror" name="startdate" value="{{ old('startdate') }}" placeholder="Masukkan Tanggal Aktif Keanggotaan">          
+                                    <input type="text" class="form-control @error('startdate') is-invalid @enderror" name="startdate" value="{{ old('startdate') }} {{ old('startdate', $blog->startdate) }}" readonly placeholder="Masukkan Tanggal Aktif Keanggotaan">          
                                     @error('startdate')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
@@ -141,7 +140,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Akhir Aktif Keanggotaan</label>
-                                    <input type="date" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value="{{ old('enddate') }}" placeholder="Masukkan Tanggal Akhir Aktif Keanggotaan">          
+                                    <input type="text" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value="{{ old('enddate') }} {{ old('enddate', $blog->enddate) }}" readonly placeholder="Masukkan Tanggal Akhir Aktif Keanggotaan">          
                                     @error('enddate')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}

@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Jenis Kelamin</label>
-                                    <input type="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender', $blog->gender) }}" readonly placeholder="Masukkan No Jenis Kelamin">          
+                                    <input type="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ ($blog->gender == 1) ? 'Laki-laki' : 'Perempuan' }}" readonly placeholder="Masukkan No Jenis Kelamin">          
                                   <!--<x-jet-input-error for="no_kontrak" class="mt-2" /> -->
                                     @error('gender')
                                         <div class="alert alert-danger mt-2">

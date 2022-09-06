@@ -175,5 +175,9 @@ class MemberReduksiFrontlinerController extends Controller
         //dd($blog);
         return view('MemberReduksi.FrmUpdateMemberReduksiFrontliner', compact('blog'));
     }
+    public function show()
+    {
+        return view('MemberReduksi.FrmInputMemberReduksi');
+    }
 }
 
