@@ -50,7 +50,6 @@
 										<div class="form-group">
 											<input type="file" name="file" required="required">
 										</div>
-			
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
