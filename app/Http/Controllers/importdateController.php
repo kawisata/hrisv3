@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Imports\FrontlinetImport;
+use App\Models\UserFrontliner;
 use Illuminate\Http\Request;
 use App\Models\MemberReduksiFronliner;
 use Illuminate\Support\Collection;
@@ -17,11 +18,11 @@ use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
 class importdateController implements ToCollection, SkipsEmptyRows, WithHeadingRow, WithProgressBar, /*WithBatchInserts, WithChunkReading,*/ WithCalculatedFormulas
 {
     use Importable;
-    public function index(Request $request)
-    {
-               
-        return view('MemberReduksi.FrmImportDate'); 
-    } 
+    public function index()
+	{
+		$blogs = UserFrontliner::latest()->paginate(10);
+        return view('MemberReduksi.FrmImportDate', compact('blogs'));
+	}
     public function collection(Collection $rows)
     {
         foreach ($rows as $row) {

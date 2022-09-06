@@ -151,7 +151,8 @@ class InputMemberReduksiFronlinerController extends Controller
         $result = json_decode($result, true);
         
         if ($result['status'] == 00) {
-            return back()->with('alert', 'Data Member Telah DiProses!');
+            //return back()->with('alert', 'Data Member Telah DiProses!');
+            return redirect()->route('MemberReduksiFrontliner.index')->with('alert', 'Data Member Telah DiProses!');
             //return "Succes!";
         } else {
             return back()->with('alert', 'Proses Data Gagal!');
