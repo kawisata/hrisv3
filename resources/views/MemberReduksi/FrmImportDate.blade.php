@@ -17,6 +17,15 @@
 						<strong>{{ $errors->first('file') }}</strong>
 					</span>
 					@endif
+
+					@if ($errors->any())
+						@foreach ($errors->all() as $error)
+						<div class="alert alert-danger alert-block">
+							<button type="button" class="close" data-dismiss="alert">×</button> 
+							<strong>Format berkas tidak sesuai</strong>
+						</div>
+						@endforeach
+					@endif
 			
 					{{-- notifikasi sukses --}}
 					@if ($sukses = Session::get('sukses'))

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-blank>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Slip Gaji') }}
@@ -10,5 +10,5 @@
                 <livewire:salary-slip/>
         </div>
     </div>
-</x-app-layout>
+</x-app-blank>
 

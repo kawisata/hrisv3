@@ -29,14 +29,15 @@ class ImportFrontliner extends Controller
 		// menangkap file excel
 		$file = $request->file('file');
  
-		// membuat nama file unik
-		$nama_file = rand().$file->getClientOriginalName();
+		// // membuat nama file unik
+		// $nama_file = rand().$file->getClientOriginalName();
  
-		// upload ke folder file_Fronliner di dalam folder public
-		$file->move('file_Fronliner',$nama_file);
- 
+		// // upload ke folder file_Fronliner di dalam folder public
+		// $file->move('file_Fronliner',$nama_file);
+
 		// import data
-		Excel::import(new FrontlinetImport, public_path('/file_Fronliner/'.$nama_file));
+		Excel::import(new FrontlinetImport, $request->file('file'));
+		
  
 		// notifikasi dengan session
 		Session::flash('sukses','Data Berhasil Diimport!');
