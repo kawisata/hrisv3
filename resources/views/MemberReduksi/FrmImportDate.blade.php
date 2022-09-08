@@ -38,7 +38,7 @@
 					<button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importExcel">
 						Import File Excel
 					</button>
-					<a href="Import_Start&End.xlsx" class="btn btn-success my-3">Download Template Excel</a>
+					<a href="{{ url('/') }}/storage/Import_Start&End.xlsx" class="btn btn-success my-3">Download Template Excel</a>
 
 
 					<br/>
