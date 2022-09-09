@@ -166,7 +166,9 @@ class MemberReduksiController extends Controller
         
         if ($result['status'] == 00) {
             $blog->update($arr);
-            return back()->with('alert', 'Data Member Telah DiProses!');
+            return redirect()->route('MemberReduksi.index')->with('alert', 'Data Member Telah DiProses!');
+            
+            //return back()->with('alert', 'Data Member Telah DiProses!');
             //return "Succes!";
         } else {
             return back()->with('alert', 'Proses Data Gagal!');
