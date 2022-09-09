@@ -122,7 +122,8 @@ class MemberReduksiFrontlinerController extends Controller
             'idtype'	        => $request->idtype,
             'employeetype'	    => $request->employeetype,
             ];
-        //    dd($apibody);
+
+            //dd($apibody);
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
