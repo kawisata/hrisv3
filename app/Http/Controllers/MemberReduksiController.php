@@ -64,10 +64,10 @@ class MemberReduksiController extends Controller
 
         //get data Blog by ID
         //$reductiontypeid1;
-        if ($request->gender==('2')) {
+        if ($request->gender==('Perempuan')) {
             $gender1 = ('2');
         } 
-        elseif ($request->gender==('1')) {
+        elseif ($request->gender==('Laki-laki')) {
             $gender1 = ('1');
         }
   
@@ -101,7 +101,7 @@ class MemberReduksiController extends Controller
             'token'             => $request->_token,
            
         ];
-      //  dd($arr);
+      // dd($arr);
 
         $apibody = [
             'nipp'              => $request->nipp,
