@@ -97,7 +97,11 @@ class MemberReduksiFrontlinerController extends Controller
             'token'             => $request->_token,
            
         ];
+<<<<<<< HEAD
        dd($arr);
+=======
+    //   dd($arr);
+>>>>>>> 2882a3bcb36204572a9a8b555c99b9b1c2d68978
 
         $apibody = [
             'nipp'              => $request->nipp,
@@ -162,7 +166,8 @@ class MemberReduksiFrontlinerController extends Controller
         
         if ($result['status'] == 00) {
             $blog->update($arr);
-            return back()->with('alert', 'Data Member Telah DiProses!');
+            return redirect()->route('MemberReduksiFrontlinerUpdate.index')->with('alert', 'Data Member Telah DiProses!');
+                       //return back()->with('alert', 'Data Member Telah DiProses!');
             //return "Succes!";
         } else {
             return back()->with('alert', 'Proses Data Gagal!');
