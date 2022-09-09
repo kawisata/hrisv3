@@ -48,10 +48,10 @@ class InputMemberReduksiFronlinerController extends Controller
             return back()->with('alert', 'Pegawai Sudah Menjadi Member! Silakan Cek Pada Halaman Update Member Reduksi');
         } */
         
-        if ($request->gender==('2')) {
+        if ($request->gender==('Perempuan')) {
             $gender1 = ('2');
         } 
-        elseif ($request->gender==('1')) {
+        elseif ($request->gender==('Laki-laki')) {
             $gender1 = ('1');
         }
   
