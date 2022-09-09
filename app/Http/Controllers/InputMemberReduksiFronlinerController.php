@@ -85,7 +85,7 @@ class InputMemberReduksiFronlinerController extends Controller
             'token'             => $request->_token,
            
         ]);
-     //   dd($blog);
+    
         $callbacksave = MemberReduksiFronliner::whereId($request->employee_id)->update([
             'status_member' => 'Member'
         ]); 
