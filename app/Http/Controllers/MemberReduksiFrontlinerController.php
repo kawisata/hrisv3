@@ -97,11 +97,7 @@ class MemberReduksiFrontlinerController extends Controller
             'token'             => $request->_token,
            
         ];
-<<<<<<< HEAD
-       dd($arr);
-=======
     //   dd($arr);
->>>>>>> 2882a3bcb36204572a9a8b555c99b9b1c2d68978
 
         $apibody = [
             'nipp'              => $request->nipp,
