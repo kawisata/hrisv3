@@ -40,6 +40,7 @@
 					</button>
 					<a href="{{ url('/') }}/storage/Import_Start&End.xlsx" class="btn btn-success my-3">Download Template Excel</a>
 
+					<p>NOTE : Import Excel harus dengan template excel yang telah di sediakan di link download</p>
 
 					<br/>
 					<!-- Import Excel -->
