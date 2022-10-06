@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tanggal Akhir Aktif Keanggotaan</label>
-                                    <input type="date" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value="{{ old('enddate') }}" placeholder="Masukkan Tanggal Akhir Aktif Keanggotaan">          
+                                    <input type="date" class="form-control @error('enddate') is-invalid @enderror" name="enddate" value="{{ old('enddate', $blog->enddate) }}" placeholder="Masukkan Tanggal Akhir Aktif Keanggotaan">          
                                     @error('enddate')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
