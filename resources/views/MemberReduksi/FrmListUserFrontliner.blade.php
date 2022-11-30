@@ -22,7 +22,8 @@
                         <table class="table table-bordered">
                             <thead>
                               <tr>
-                                <th scope="col">NIP</th>
+                                <th scope="col">NIP Lama</th>
+				<th scope="col">NIP</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Kelamin</th>
@@ -34,7 +35,8 @@
 
                               @forelse ($blogs as $blog)
                                 <tr>
-                                    <td>{!! $blog->id !!}</td>
+                                    <td>{!! $blog->nip !!}</td>
+				    <td>{!! $blog->id !!}</td>
                                     <td>{!! $blog->name !!}</td>
                                     <td>{!! ($blog->frontlineraddress == null) ? "" : $blog->frontlineraddress->address !!}</td> 
                                     <td>@if ($blog->kelamin == '1')

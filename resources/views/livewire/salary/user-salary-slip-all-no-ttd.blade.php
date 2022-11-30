@@ -4,7 +4,7 @@
 
 {{-- header v2 --}}
 
-            <div class="card-body py-0 px-0 text-sm mt-4">
+            <div class="card-body py-0 px-0 text-xs mt-4">
                 <table class=" card-body table table-bordered mx-0 my-0 p-0 table-sm">
                     <tr class="card-header border font-bold text-center fs-6">
                         <td colspan="6" >
@@ -60,7 +60,7 @@
 
             {{-- rincian v2 --}}
             <div>
-                <table class="table table-bordered py-0 px-0 mt-3 text-sm">
+                <table class="table table-bordered py-0 px-0 mt-3 text-xs">
                     <tbody>
                         <tr>
                             <td class="p-0">

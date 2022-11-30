@@ -27,7 +27,7 @@
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Kelamin</th>
                                 <th scope="col">Status Member</th>
-                                <!--<th scope="col">Sekolah</th> -->
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Aksi</th>
                               </tr>
                             </thead>
@@ -52,8 +52,9 @@
                                         <span style="color: blue;">Sukses</p>
                                         @else
                                         <span style="color: red;">Gagal</span>
-                                        @endif</td>
-                                    <!-- <td>{!! $blog->sekolah !!}</td> -->
+                                        @endif
+				    </td>
+                                    <td>{!! $blog->message !!}</td>
                                     <td class="text-center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('Berkas.destroy', $blog->id) }}" method="POST"> 
                                         <form>

@@ -22,6 +22,7 @@ class InputMemberReduksiFronlinerController extends Controller
 {
     public function store(Request $request)
     {
+// used link MemberReduksiFrontliner
          $this->validate($request, [
              'employee_id'	        => 'required',
              'nipp'              => 'required',
@@ -112,7 +113,7 @@ class InputMemberReduksiFronlinerController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://memsvcdev.kai.id:8001/rtsng_reduction/add_member_ap',
+            CURLOPT_URL => 'http://memsvc-rts40.kai.id:8001/rtsng_reduction/add_member_ap',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

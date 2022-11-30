@@ -1,7 +1,7 @@
 <x-app-blank>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-     Input Member Reduksi
+     Input Member Reduksi Frontliner
         </h2>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"</link>
     </x-slot>
@@ -12,7 +12,18 @@
                     <div class="card-body">
                         <form action="{{ route('MemberReduksiFrontliner.store') }}" method="POST" enctype="multipart/form-data">                  
                             @csrf
-                            <div class="form-group">
+				<div class="form-group">
+                                    <label class="font-weight-bold">NIPP Lama</label>
+                                    <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="/" value="{{ old('nipp', $blog->nip) }}" readonly placeholder="Masukkan No NIPP">          
+                                <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->
+                                    @error('nipp')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror 
+                                </div>
+
+                            	<div class="form-group">
                                     <label class="font-weight-bold">NIPP</label>
                                     <input type="text" class="form-control @error('nipp') is-invalid @enderror" name="nipp" value="{{ old('nipp', $blog->id) }}" readonly placeholder="Masukkan No NIPP">          
                                 <!--    <x-jet-input-error for="no_kontrak" class="mt-2" /> -->

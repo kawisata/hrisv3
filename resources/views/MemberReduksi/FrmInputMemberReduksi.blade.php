@@ -1,7 +1,7 @@
 <x-app-blank>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-     Input Member Reduksi
+     Input Member Reduksii
         </h2>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"</link>
     </x-slot>

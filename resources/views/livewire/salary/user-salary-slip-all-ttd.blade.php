@@ -1,12 +1,12 @@
-				<div class="page p-5 sm:p-16 md:p-16">
+				<div class="page sm:p-8 md:p-8">
 					<div>
 						<img src="{{ asset('images/logo1.png') }}"
-											class="h-24"
+											class="h-20"
 											alt="">
 
 						{{-- header v2 --}}
 
-						<div class="card-body mt-4 py-0 px-0 text-sm">
+						<div class="card-body mt-4 py-0 px-0 text-xs">
 							<table class="card-body table-bordered table-sm mx-0 my-0 table p-0">
 								<tr class="card-header fs-6 border text-center font-bold">
 									<td colspan="6">
@@ -66,7 +66,7 @@
 
 						{{-- rincian v2 --}}
 						<div>
-							<table class="table-bordered mt-3 table py-0 px-0 text-sm">
+							<table class="table-bordered mt-3 table py-0 px-0 text-xs">
 								<tbody>
 									<tr>
 										<td class="p-0">
@@ -523,7 +523,7 @@
 						</div>
 						{{-- thp --}}
 						<div class="w-full">
-							<table class="table-bordered mt-3 table py-0 px-0 text-base">
+							<table class="table-bordered mt-3 table py-0 px-0 text-xs">
 								<tr>
 									<td class="p-0">
 										<table class="card-footer mb-0 table border border-black">
@@ -547,7 +547,7 @@
 								</tr>
 							</table>
 						</div>
-						<div class="ml-[650px]">
+						<div class="ml-[650px] text-xs">
 							<p>Jakarta, {{ \Carbon\Carbon::parse($oncycle->updated_at)->translatedFormat('d F Y') }}</p>
 							<p>Manager Human Capital,</p>
 							<div class="py-2">

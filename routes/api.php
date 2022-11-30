@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('callbackReduksi', [CallbackReduksi::class, 'callbackReduksi']);
+Route::post('callbackReduksiProduction', [CallbackReduksi::class, 'callbackReduksi']);

@@ -30,7 +30,7 @@ class MemberReduksiController extends Controller
                     });
         }
 
-        $data['blogs']=$blogs->paginate(10);
+        $data['blogs']=$blogs->latest()->paginate(10);
         return view('MemberReduksi.FrmMemberReduksi', $data); 
     } 
     /*public function edit($id)
@@ -41,6 +41,7 @@ class MemberReduksiController extends Controller
     }*/
     public function update(Request $request, $id)
     {
+// used link MemberReduksi (update)
         $this->validate($request, [
            
             'nipp'              => 'required',
@@ -126,7 +127,7 @@ class MemberReduksiController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://memsvcdev.kai.id:8001/rtsng_reduction/add_member_ap',
+            CURLOPT_URL => 'http://memsvc-rts40.kai.id:8001/rtsng_reduction/add_member_ap',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -180,5 +181,8 @@ class MemberReduksiController extends Controller
         $blog = MemberReduksi::find($id);
         //dd($blog);
         return view('MemberReduksi.FrmUpdateMemberReduksi', compact('blog'));
+    }
+    public function show()
+    {
     }
 }
