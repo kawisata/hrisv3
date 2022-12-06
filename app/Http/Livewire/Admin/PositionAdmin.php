@@ -42,8 +42,7 @@ class PositionAdmin extends Component
 
     public function render()
     {
-        $positions = Position::with('mailboxes')
-            ->where('type',1)
+        $positions = Position::where('type',1)
             ->where(function($query) {
                 $query->where('name','like', '%' . $this->search . '%')
                       ->orWhere('alias','like', '%' . $this->search . '%')

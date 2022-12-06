@@ -65,6 +65,8 @@ class OncycleImport implements ToCollection, SkipsEmptyRows, WithHeadingRow, Wit
                         'jpk_uk' => $row['jpk_uk'],
                         'jpk_pens' => $row['jpk_pens'],
                         'jpk_pens_p' => $row['jpk_pens_p'],
+                        'psc_kerja' => $row['psc_kerja'],
+                        'pens_mandiri' => $row['pens_mandiri'],
                         'spka' => $row['spka'],
                         'potongan_lain' => $row['potongan_lain'],
                         'sewa_rumah_dinas' => $row['sewa_rumah_dinas'],
@@ -80,10 +82,10 @@ class OncycleImport implements ToCollection, SkipsEmptyRows, WithHeadingRow, Wit
                         't_potongan' => $row['t_potongan'],
                         'month' => $row['month'],
                         'year' => $row['year'],
-                        't_direksi' => $row['t_direksi'] ?? '',
-                        't_komisaris' => $row['t_komisaris'] ?? '',
-                        't_perumahan_direksi' => $row['t_perumahan_direksi'] ?? '',
-                        't_transport_komisaris' => $row['t_transport_komisaris'] ?? '',
+                        't_direksi' => $row['t_direksi'] ?? 0,
+                        't_komisaris' => $row['t_komisaris'] ?? 0,
+                        't_perumahan_direksi' => $row['t_perumahan_direksi'] ?? 0,
+                        't_transport_komisaris' => $row['t_transport_komisaris'] ?? 0,
                     ]
                 );
         }

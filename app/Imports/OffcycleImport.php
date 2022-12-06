@@ -37,6 +37,7 @@ class OffcycleImport implements ToCollection, SkipsEmptyRows, WithHeadingRow, Wi
                         'komunikasi' => $row['komunikasi'],
                         'jabatan' => $row['jabatan'],
                         'kinerja' => $row['kinerja'],
+                        'khusus_jabatan' => $row['khusus_jabatan'],
                         'kemahalan' => $row['kemahalan'],
                         'cuti' => $row['cuti'],
                         'profesi' => $row['profesi'],
