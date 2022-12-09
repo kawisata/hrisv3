@@ -39,6 +39,7 @@ use App\Http\Controllers\ImportFrontliner;
 
 use App\Http\Controllers\DocumentPphPribadiController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Livewire\Admin\EmployeeUpdate;
 use App\Http\Livewire\Employee\EventPresenceComponent;
 
 
@@ -105,7 +106,7 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
 	Route::resource('MemberReduksiFrontlinerUpdate',MemberReduksiFrontlinerController::class);
 	Route::resource('MemberReduksiFrontliner',InputMemberReduksiFronlinerController::class);
 	Route::resource('ImportDate',importdateController::class);
-	
+
 
     Route::resource('ListKaryawan', BerkasKontrakUserController::class);
     Route::resource('ListKontrak', ListKontrakController::class);
@@ -143,6 +144,7 @@ Route::prefix('superadmin')->middleware(['auth', 'role:superadministrator'])->gr
 	Route::get('/position-admin', PositionAdmin::class)->name('position-admin');
 	Route::get('/group-admin', GroupAdmin::class)->name('group-admin');
 	Route::get('/user-admin', UserAdmin::class)->name('user-admin');
+	Route::get('/employee-update', EmployeeUpdate::class)->name('employee-update');
 });
 
 Route::controller(SalarySlipController::class)
@@ -156,7 +158,7 @@ Route::controller(SalarySlipController::class)
         Route::get('/edit/{id}', [ListKontrakController::class, 'edit']);
     });
 	Route::prefix('MemberReduksi1')->group(function () {
-		
+
 		Route::get('/{id}', [\App\Http\Controllers\MemberReduksiController::class, 'edit'])->name('MemberReduksi1.edit');
 
 	});

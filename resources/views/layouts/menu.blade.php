@@ -256,12 +256,16 @@
                   <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('MemberReduksi.index') }}">Update Member Reduksi</a>
                   </li>
+
                   <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a>
-                  </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="{{ route('ImportDate.index') }}">Import Excel Member Reduksi Frontliner</a>
-                  </li>
+                      <a class="w-full" href="{{ route('MemberReduksiFrontlinerUpdate.index') }}">Update Member Reduksi Frontliner</a>
+                    </li>
+                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                        <a class="w-full" href="{{ route('ImportDate.index') }}">Import Excel Member Reduksi Frontliner</a>
+                    </li>
+                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                      <a class="w-full" href="{{ route('employee-update') }}">Update Data Pekerja Kantor Pusat</a>
+                    </li>
                   <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                     <a class="w-full" href="{{ route('admin.salaries') }}">Import Slip Gaji</a>
                   </li>
