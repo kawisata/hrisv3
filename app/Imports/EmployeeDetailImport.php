@@ -2,9 +2,11 @@
 
 namespace App\Imports;
 
+use App\Models\User;
 use App\Models\Employee;
 use App\Models\EmployeeDetail;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
@@ -22,6 +24,18 @@ class EmployeeDetailImport implements ToCollection, SkipsEmptyRows, WithHeadingR
 	{
 		foreach ($rows as $row) {
 
+            User::updateOrCreate(
+                [
+                    'id' => $row['user_id'],
+                ],
+                [
+                    'name' => $row['nama'],
+                    'email' => $row['user_id'] . '@kawisata.id',
+                    'password' => Hash::make('StdPwdKAP2022'),
+                    'active'    => true,
+                ],
+            );
+
 			Employee::updateOrCreate(
 				[
 					'user_id' => $row['user_id'],
@@ -36,12 +50,14 @@ class EmployeeDetailImport implements ToCollection, SkipsEmptyRows, WithHeadingR
 			);
 
 
+
+
 			EmployeeDetail::updateOrCreate(
 				[
 					'nik' => $row['nik'],
+                    'user_id' => $row['user_id'],
 				],
 				[
-					'user_id' => $row['user_id'],
 					'kk' => $row['kk'],
 					'npwp' => $row['npwp'],
 					'address1' => $row['address1'],
