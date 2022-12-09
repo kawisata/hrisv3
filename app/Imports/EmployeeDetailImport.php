@@ -24,18 +24,6 @@ class EmployeeDetailImport implements ToCollection, SkipsEmptyRows, WithHeadingR
 	{
 		foreach ($rows as $row) {
 
-            User::updateOrCreate(
-                [
-                    'id' => $row['user_id'],
-                ],
-                [
-                    'name' => $row['nama'],
-                    'email' => $row['user_id'] . '@kawisata.id',
-                    'password' => Hash::make('StdPwdKAP2022'),
-                    'active'    => true,
-                ],
-            );
-
 			Employee::updateOrCreate(
 				[
 					'user_id' => $row['user_id'],
