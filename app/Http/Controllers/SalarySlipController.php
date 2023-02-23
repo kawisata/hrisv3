@@ -14,7 +14,7 @@ class SalarySlipController extends Controller
 
 	public function all($uuid, $ttd)
 	{
-
+        // dd('ini');
 		$managersdm = Position::where('id', 92181677)->with('employee')->first();
 		$oncycle = Oncycle::where('uuid', $uuid)
 			->first();
@@ -31,21 +31,20 @@ class SalarySlipController extends Controller
 			$potongan_lain = $offcycle->potongan_lain - ($offcycle->potongan_lain * 2);
 			$admin_bank = $offcycle->admin_bank - ($offcycle->admin_bank * 2);
 			$potongan = $oncycle->t_potongan - $offcycle->t_potongan;
+            $thp = $oncycle->thp + $offcycle->thp;
 		} else {
+            $potongan_lain = '';
+            $admin_bank = '';
 			$potongan = $oncycle->t_potongan;
+            $thp = $oncycle->thp;
 		}
 
-		if ($offcycle) {
-			$thp = $oncycle->thp + $offcycle->thp;
-		} else {
-			$thp = $oncycle->thp;
-		}
+        $pdf = PDF::loadView(
+            'livewire.salary.user-salary-slip-all',
+            compact(['oncycle', 'offcycle', 'ttd', 'penerimaan', 'potongan', 'thp', 'managersdm', 'potongan_lain', 'admin_bank'])
+        );
 
 
-		$pdf = PDF::loadView(
-			'livewire.salary.user-salary-slip-all',
-			compact(['oncycle', 'offcycle', 'ttd', 'penerimaan', 'potongan', 'thp', 'managersdm', 'potongan_lain', 'admin_bank'])
-		);
 
 		return $pdf->download($oncycle->month . '-' . $oncycle->year . '-' . $oncycle->jabatan . '-' . $uuid . '.pdf');
 	}
