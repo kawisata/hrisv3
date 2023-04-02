@@ -1,17 +1,17 @@
-    <div class="page sm:p-16 md:p-16 p-5">
+    <div class="p-5 page sm:p-16 md:p-16">
         <div>
             <img src="{{ asset('images/logo1.png') }}" class="h-24" alt="">
 
 {{-- header v2 --}}
 
-            <div class="card-body py-0 px-0 text-xs mt-4">
-                <table class=" card-body table table-bordered mx-0 my-0 p-0 table-sm">
-                    <tr class="card-header border font-bold text-center fs-6">
+            <div class="px-0 py-0 mt-4 text-xs card-body">
+                <table class="table p-0 mx-0 my-0 card-body table-bordered table-sm">
+                    <tr class="font-bold text-center border card-header fs-6">
                         <td colspan="6" >
                             PERINCIAN PEMBAYARAN PENGHASILAN PEKERJA
                         </td>
                     </tr>
-                    <tr class="card-header font-bold border  text-center fs-6">
+                    <tr class="font-bold text-center border card-header fs-6">
                         <td colspan="6" >
                             Tunjangan Tidak Tetap
                         </td>
@@ -56,22 +56,22 @@
                         <td>Rekening</td><td>{{$offcycle->bank}} - {{$offcycle->rekening}}</td>
                     </tr>
                     <tr>
-                        <td>Jabatan</td><td>{{$offcycle->position}}</td>
+                        <td>Jabatan</td><td>{{$offcycle->user->position->name ?? ''}}</td>
                         <td>NPWP</td><td>{{$offcycle->npwp}}</td>
                     </tr>
                 </table>
             </div>
 
-            <hr class=" my-2">
+            <hr class="my-2 ">
 
             {{-- rincian v2 --}}
             <div>
-                <table class="table table-bordered py-0 px-0 mt-3 text-xs">
+                <table class="table px-0 py-0 mt-3 text-xs table-bordered">
                     <tbody>
                         <tr>
                             <td class="p-0">
-                                <div class="card-header border m-0 font-bold">Penerimaan</div>
-                                <table class=" card-body table border border-black table-sm mb-0">
+                                <div class="m-0 font-bold border card-header">Penerimaan</div>
+                                <table class="table mb-0 border border-black card-body table-sm">
                                     <tbody>
                                             @if($offcycle->transport == 0)
                                             @else
@@ -83,9 +83,13 @@
                                             <tr><td>Tunjangan Komunikasi</td><td style="text-align:right">{{number_format($offcycle->komunikasi, 0, ',', '.')}}</td></tr>
                                             @endif
 
-                                            @if($offcycle->jabatan == 0)
+                                            @if($offcycle->khusus_jabatan == 0)
                                             @else
-                                            <tr><td>Tunjangan Jabatan</td><td style="text-align:right">{{number_format($offcycle->jabatan, 0, ',', '.')}}</td></tr>
+                                            <tr>
+                                              <td>Tunjangan Khusus</td>
+                                              <td style="text-align:right">{{number_format($offcycle->khusus_jabatan, 0, ',', '.')}}</td>
+                                            </tr>
+
                                             @endif
 
                                             @if($offcycle->kinerja == 0)
@@ -120,8 +124,8 @@
 
                             </td>
                             <td class="p-0">
-                                <div class="card-header font-bold">Potongan</div>
-                                <table class="card-body table border border-black table-sm mb-0">
+                                <div class="font-bold card-header">Potongan</div>
+                                <table class="table mb-0 border border-black card-body table-sm">
                                     <tbody>
                                         @if($offcycle->potongan_lain == 0)
                                         @else
@@ -138,8 +142,8 @@
                         </tr>
                         <tr>
                             <td class="p-0">
-                                <table class="card-footer table border border-black mb-0">
-                                    <tr class=" font-bold">
+                                <table class="table mb-0 border border-black card-footer">
+                                    <tr class="font-bold ">
                                         <td >Total Penerimaan </td>
                                         <td style="text-align:right" >
                                         {{number_format($offcycle->t_penerimaan, 0, ',', '.')}}
@@ -149,8 +153,8 @@
                             </td>
                             <td></td>
                             <td  class="p-0">
-                                <table class="card-footer table border border-black mb-0">
-                                    <tr class=" font-bold">
+                                <table class="table mb-0 border border-black card-footer">
+                                    <tr class="font-bold ">
                                         <td >Total Potongan</td>
                                         <td style="text-align:right"  >
                                         {{number_format($t_potongan, 0, ',', '.')}}
@@ -164,11 +168,11 @@
             </div>
             {{-- thp --}}
             <div class="w-full">
-                <table class="table table-bordered py-0 px-0 mt-3 text-base">
+                <table class="table px-0 py-0 mt-3 text-base table-bordered">
                     <tr>
                         <td class="p-0">
-                            <table class="card-footer table border border-black mb-0">
-                                <tr class=" font-bold">
+                            <table class="table mb-0 border border-black card-footer">
+                                <tr class="font-bold ">
                                     <td >Take Home Pay</td>
                                     <td class="text-left">
                                     Rp.{{number_format($offcycle->thp, 2, ',', '.')}}
@@ -177,7 +181,7 @@
                                     </td>
                                 </tr>
                                 <tr >
-                                    <td class=" font-bold" >Terbilang</td>
+                                    <td class="font-bold " >Terbilang</td>
                                     <td colspan="2" class="text-left font-italic">
                                     {{ Terbilang::make($offcycle->thp, ' rupiah')}}
                                     </td>
