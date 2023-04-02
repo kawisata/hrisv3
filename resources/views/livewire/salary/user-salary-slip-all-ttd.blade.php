@@ -71,7 +71,11 @@
 				              <div class="m-0 font-bold border card-header">Penerimaan</div>
 				              <table class="table mb-0 border border-black card-body table-sm">
 				                <tbody>
-				                  @if ($oncycle->upah_pokok == 0)
+				                  <tr>
+				                    <td colspan="2" class="font-bold card-header">Upah Pokok & Tunjangan Tetap</td>
+				                  </tr>
+
+                                    @if ($oncycle->upah_pokok == 0)
 				                  @else
 				                  <tr>
 				                    <td>Upah Pokok</td>
@@ -99,13 +103,21 @@
 				                  @endif
 
 				                  @if ($oncycle->t_transport_komisaris == 0 || $oncycle->t_transport_komisaris == NULL)
-
 				                  @else
 				                  <tr>
 				                    <td>Tunjangan Transportasi Komisaris</td>
 				                    <td style="text-align:right">{{ number_format($oncycle->t_transport_komisaris, 0, ',', '.') }}</td>
 				                  </tr>
 				                  @endif
+
+				                  @if ($oncycle->t_jabatan == 0)
+				                  @else
+				                  <tr>
+				                    <td>Tunjangan Jabatan</td>
+				                    <td style="text-align:right">{{ number_format($oncycle->t_jabatan, 0, ',', '.') }}</td>
+				                  </tr>
+				                  @endif
+
 
 				                  @if ($oncycle->pkwt == 0)
 				                  @else
@@ -204,23 +216,12 @@
 				                  </tr>
 				                  @endif
 
-				                  @if ($oncycle->pajak == 0)
-				                  @else
-				                  <tr>
-				                    <td>Tunjangan Pajak</td>
-				                    <td style="text-align:right">{{ number_format($oncycle->pajak, 0, ',', '.') }}</td>
-				                  </tr>
-				                  @endif
-
-				                  @if ($oncycle->t_kurang_bayar == 0)
-				                  @else
-				                  <tr>
-				                    <td>Tunjangan Kekurangan Bayar</td>
-				                    <td style="text-align:right">{{ number_format($oncycle->t_kurang_bayar, 0, ',', '.') }}</td>
-				                  </tr>
-				                  @endif
 
 				                  @if ($offcycle)
+				                  <tr>
+				                    <td colspan="2" class="font-bold card-header">Tunjangan Tidak Tetap</td>
+				                  </tr>
+
 				                  @if ($offcycle->transport == 0)
 				                  @else
 				                  <tr>
@@ -256,7 +257,7 @@
 				                  @if ($offcycle->khusus_jabatan == 0)
 				                  @else
 				                  <tr>
-				                    <td>Tunjangan Khusus Jabatan Tertentu</td>
+				                    <td>Tunjangan Khusus</td>
 				                    <td style="text-align:right">{{ number_format($offcycle->khusus_jabatan, 0, ',', '.') }}</td>
 				                  </tr>
 				                  @endif
@@ -294,6 +295,29 @@
 				                  </tr>
 				                  @endif
 				                  @endif
+
+                                  				                  <tr>
+                                  				                    <td colspan="2" class="font-bold card-header">Lain-lain</td>
+                                  				                  </tr>
+
+
+                                  				                  @if ($oncycle->pajak == 0)
+                                  				                  @else
+                                  				                  <tr>
+                                  				                    <td>Tunjangan Pajak</td>
+                                  				                    <td style="text-align:right">{{ number_format($oncycle->pajak, 0, ',', '.') }}</td>
+                                  				                  </tr>
+                                  				                  @endif
+
+                                  				                  @if ($oncycle->t_kurang_bayar == 0)
+                                  				                  @else
+                                  				                  <tr>
+                                  				                    <td>Tunjangan Kekurangan Bayar</td>
+                                  				                    <td style="text-align:right">{{ number_format($oncycle->t_kurang_bayar, 0, ',', '.') }}</td>
+                                  				                  </tr>
+                                  				                  @endif
+
+
 				                </tbody>
 				              </table>
 				            </td>

@@ -1,4 +1,4 @@
-				<div class="page p-5 sm:p-16 md:p-16">
+				<div class="p-5 page sm:p-16 md:p-16">
 					<div>
 						<img src="{{ asset('images/logo1.png') }}"
 											class="h-24"
@@ -6,14 +6,14 @@
 
 						{{-- header v2 --}}
 
-						<div class="card-body mt-4 py-0 px-0 text-xs">
-							<table class="card-body table-bordered table-sm mx-0 my-0 table p-0">
-								<tr class="card-header fs-6 border text-center font-bold">
+						<div class="px-0 py-0 mt-4 text-xs card-body">
+							<table class="table p-0 mx-0 my-0 card-body table-bordered table-sm">
+								<tr class="font-bold text-center border card-header fs-6">
 									<td colspan="6">
 										PERINCIAN PEMBAYARAN PENGHASILAN PEKERJA
 									</td>
 								</tr>
-								<tr class="card-header fs-6 border text-center font-bold">
+								<tr class="font-bold text-center border card-header fs-6">
 									<td colspan="6">
 										Upah Pokok Dan Tunjangan Tetap
 									</td>
@@ -71,12 +71,12 @@
 
 						{{-- rincian v2 --}}
 						<div>
-							<table class="table-bordered mt-3 table py-0 px-0 text-xs">
+							<table class="table px-0 py-0 mt-3 text-xs table-bordered">
 								<tbody>
 									<tr>
 										<td class="p-0">
-											<div class="card-header m-0 border font-bold">Penerimaan</div>
-											<table class="card-body table-sm mb-0 table border border-black">
+											<div class="m-0 font-bold border card-header">Penerimaan</div>
+											<table class="table mb-0 border border-black card-body table-sm">
 												<tbody>
 													@if ($oncycle->upah_pokok == 0)
 													@else
@@ -118,6 +118,15 @@
 														</tr>
 													@endif
 
+                                                    @if ($oncycle->t_jabatan == 0)
+													@else
+													<tr>
+													  <td>Tunjangan Jabatan</td>
+													  <td style="text-align:right">{{ number_format($oncycle->t_jabatan, 0, ',', '.') }}</td>
+													</tr>
+													@endif
+
+
 													@if ($oncycle->t_admin_bank == 0)
 													@else
 														<tr>
@@ -128,7 +137,7 @@
 
 													<tr>
 														<td colspan="2"
-																		class="card-header font-bold">Jaminan Sosial Ketenagakerjaan BPJS :</td>
+																		class="font-bold card-header">Jaminan Sosial Ketenagakerjaan BPJS :</td>
 													</tr>
 													<tr>
 														<td>- Jaminan Hari Tua 3,7%</td>
@@ -157,7 +166,7 @@
 
 													<tr>
 														<td colspan="2"
-																		class="card-header font-bold">Jaminan Pemeliharaan Kesehatan (JPK)</td>
+																		class="font-bold card-header">Jaminan Pemeliharaan Kesehatan (JPK)</td>
 													</tr>
 
 													@if ($oncycle->jpk_kawis == 0)
@@ -206,14 +215,14 @@
 
 										</td>
 										<td class="p-0">
-											<div class="card-header font-bold">Potongan</div>
-											<table class="card-body table-sm mb-0 table border border-black">
+											<div class="font-bold card-header">Potongan</div>
+											<table class="table mb-0 border border-black card-body table-sm">
 												<tbody>
 													@if ($oncycle->tht == 0)
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Tabungan Hari Tua Taspen :</td>
+																			class="font-bold card-header">Tabungan Hari Tua Taspen :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Pekerja 3,25%</td>
@@ -225,7 +234,7 @@
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Jaminan Hari Tua Jiwasraya :</td>
+																			class="font-bold card-header">Jaminan Hari Tua Jiwasraya :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Perusahaan 12,5%</td>
@@ -238,7 +247,7 @@
 													@endif
 													<tr>
 														<td colspan="2"
-																		class="card-header font-bold">Jaminan Hari Tua BPJS Ketenagakerjaan :</td>
+																		class="font-bold card-header">Jaminan Hari Tua BPJS Ketenagakerjaan :</td>
 													</tr>
 													<tr>
 														<td>- Iuran Perusahaan 3,7%</td>
@@ -250,7 +259,7 @@
 													</tr>
 													<tr>
 														<td colspan="2"
-																		class="card-header font-bold">Jaminan Pensiun BPJS Ketenagakerjaan :</td>
+																		class="font-bold card-header">Jaminan Pensiun BPJS Ketenagakerjaan :</td>
 													</tr>
 													<tr>
 														<td>- Iuran Perusahaan 2%</td>
@@ -273,7 +282,7 @@
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Jaminan Kesehatan BPJS Kesehatan (Mandiri-PKWT) :</td>
+																			class="font-bold card-header">Jaminan Kesehatan BPJS Kesehatan (Mandiri-PKWT) :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Perusahaan 4%</td>
@@ -289,7 +298,7 @@
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Jaminan Kesehatan Unit Kesehatan KAI :</td>
+																			class="font-bold card-header">Jaminan Kesehatan Unit Kesehatan KAI :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Pekerja 1%</td>
@@ -301,7 +310,7 @@
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Jaminan Kesehatan BPJS Kesehatan (Perbantuan) :</td>
+																			class="font-bold card-header">Jaminan Kesehatan BPJS Kesehatan (Perbantuan) :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Perusahaan 4%</td>
@@ -317,7 +326,7 @@
 													@else
 														<tr>
 															<td colspan="2"
-																			class="card-header font-bold">Jaminan Kesehatan Pensiunan :</td>
+																			class="font-bold card-header">Jaminan Kesehatan Pensiunan :</td>
 														</tr>
 														<tr>
 															<td>- Iuran Perusahaan 2%</td>
@@ -400,7 +409,7 @@
 							</tr>
 							<tr>
 								<td class="p-0">
-									<table class="card-footer mb-0 table border border-black">
+									<table class="table mb-0 border border-black card-footer">
 										<tr class="font-bold">
 											<td>Total Penerimaan </td>
 											<td style="text-align:right">
@@ -411,7 +420,7 @@
 								</td>
 								<td></td>
 								<td class="p-0">
-									<table class="card-footer mb-0 table border border-black">
+									<table class="table mb-0 border border-black card-footer">
 										<tr class="font-bold">
 											<td>Total Potongan</td>
 											<td style="text-align:right">
@@ -426,10 +435,10 @@
 						</div>
 						{{-- thp --}}
 						<div class="w-full">
-							<table class="table-bordered mt-3 table py-0 px-0 text-base">
+							<table class="table px-0 py-0 mt-3 text-base table-bordered">
 								<tr>
 									<td class="p-0">
-										<table class="card-footer mb-0 table border border-black">
+										<table class="table mb-0 border border-black card-footer">
 											<tr class="font-bold">
 												<td>Take Home Pay</td>
 												<td class="text-left">
@@ -441,7 +450,7 @@
 											<tr>
 												<td class="font-bold">Terbilang</td>
 												<td colspan="2"
-																class="font-italic text-left">
+																class="text-left font-italic">
 													{{ Terbilang::make($oncycle->thp, ' rupiah') }}
 												</td>
 											</tr>

@@ -46,6 +46,7 @@ class OncycleImport implements ToCollection, SkipsEmptyRows, WithHeadingRow, Wit
                         'upah_pokok' => $row['upah_pokok'],
                         'pkwt' => $row['pkwt'],
                         'bpjs_base' => $row['bpjs_base'],
+                        't_jabatan' => $row['t_jabatan'],
                         'perumahan' => $row['perumahan'],
                         't_admin_bank' => $row['t_admin_bank'],
                         't_kurang_bayar' => $row['t_kurang_bayar'],
