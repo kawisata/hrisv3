@@ -28,6 +28,7 @@ class PositionAdminModal extends ModalComponent
             $user_id,
             $grade,
             $unit,
+            $position,
             $type,
             $head_unit,
             $hierarchy,
@@ -65,9 +66,9 @@ class PositionAdminModal extends ModalComponent
     }
     public function render()
     {
-        $this->users = User::all();
+        $users = User::all();
 
-        return view('livewire.admin.position-admin-modal');
+        return view('livewire.admin.position-admin-modal',compact('users'));
     }
 
     protected static array $maxWidths = [
