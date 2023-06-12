@@ -27,6 +27,7 @@ class UserAdminEditModal extends ModalComponent
     use PasswordValidationRules;
     public  $name,
             $email,
+            $user,
             $user_id,
             $active,
             $password;
@@ -43,11 +44,11 @@ class UserAdminEditModal extends ModalComponent
     }
     public function render()
     {
-        $this->users = User::all();
-        $this->positions = Position::where('user_id', null)
+        $users = User::all();
+        $positions = Position::where('user_id', null)
             ->where('type', 1)
             ->get();
-        return view('livewire.admin.user-admin-edit-modal');
+        return view('livewire.admin.user-admin-edit-modal',compact(['users','positions']));
     }
 
     protected static array $maxWidths = [
@@ -79,7 +80,7 @@ class UserAdminEditModal extends ModalComponent
 
     public function save()
     {
-        dd('ini');
+        // dd($this->active);
        $validatedData = Validator::make(
             [
                 'id'    => $this->user_id,

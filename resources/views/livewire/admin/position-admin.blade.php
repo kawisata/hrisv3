@@ -1,7 +1,7 @@
 <div>
     <div class="relative w-full pb-12 overflow-hidden text-gray-900 bg-gray-200 border border-gray-300 focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500">
 
-        <div class="visible w-full md:invisible md:hidden">
+        <div class="w-full ">
             <div class="py-2 pl-2 md:pl-[265px] left-0 right-0 w-full flex justify-between overflow-hidden shadow-xs bg-white">
                 <div class="flex justify-start flex-1 md:mr-32">
                     <div class="relative w-full max-w-xl mr-6 focus-within:text-gray-500">
@@ -64,7 +64,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex flex-wrap items-center gap-2 space-x-2">
-                                                        <div class="flex items-center gap-2 text-xs text-gray-600  md:text-sm">
+                                                        <div class="flex items-center gap-2 text-xs text-gray-600 md:text-sm">
                                                             <span class="font-bold">Alias: </span> {{ $position->alias }} |
                                                             @if ($position->group)
                                                                 <span class="font-bold">Group: </span> {{ $position->group->name }} |
@@ -75,14 +75,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex flex-wrap items-center space-x-2">
-                                                        <div class="flex items-center gap-2 text-xs text-gray-600  md:text-sm">
+                                                        <div class="flex items-center gap-2 text-xs text-gray-600 md:text-sm">
                                                             <span class="font-bold">Unit: </span> {{ $position->unit }} |
-                                                            <span class="font-bold">Head Unit: </span> {{ $position->head_unit }} |
-                                                            <span class="font-bold">Asisten Untuk:</span>
-                                                            @if ($position->assistant)
-                                                                {{ $position->assistant->name }} | {{ $position->assistant_id }}
-                                                            @endif
-                                                        </div>
+                                                            <span class="font-bold">Head Unit: </span> {{ $position->head_unit }}                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>

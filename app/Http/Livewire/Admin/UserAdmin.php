@@ -23,6 +23,7 @@ class UserAdmin extends Component
         ];
 
     protected $queryString = [
+        'search'
     ];
 
     public function loadNota()
@@ -43,12 +44,15 @@ class UserAdmin extends Component
 
     public function render()
     {
-        $users = User::with('positions')
+        $users = User::leftjoin('positions','positions.user_id','users.id')
+            ->select('positions.name as position_name', 'users.name as user_name','users.id as user_id','users.email as email','users.active as active')
             ->where(function($query) {
-                $query  ->where('name','like', '%' . $this->search . '%')
-                        ->orWhere('id','like', '%' . $this->search . '%');
+                $query  ->where('users.name','like', '%' . $this->search . '%')
+                        ->orWhere('positions.name', 'like', '%' . $this->search . '%')
+                        ->orWhere('users.id','like', '%' . $this->search . '%');
                 })
-            ->paginate(25);
+            ->paginate(12);
+            // dd($users);
         return view('livewire.admin.user-admin', compact('users'));
     }
 

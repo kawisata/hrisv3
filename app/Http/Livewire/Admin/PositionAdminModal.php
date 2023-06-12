@@ -30,7 +30,6 @@ class PositionAdminModal extends ModalComponent
             $unit,
             $type,
             $head_unit,
-            $assistant_id,
             $hierarchy,
             $active,
             $positionid;
@@ -44,7 +43,6 @@ class PositionAdminModal extends ModalComponent
                 'type' => 'required|max:4',
                 'unit' => 'required|max:100',
                 'head_unit' => 'nullable|max:10',
-                // 'assistant_id' => 'required|max:8',
                 'active' => 'required|max:1',
                 ];
 
@@ -60,7 +58,6 @@ class PositionAdminModal extends ModalComponent
             $this->unit         = $position->unit;
             $this->type         = $position->type;
             $this->head_unit    = $position->head_unit;
-            $this->assistant_id = $position->assistant_id;
             $this->hierarchy    = $position->hierarchy;
             $this->active       = $position->active;
             $this->positionid   = $position->positionid;
@@ -69,7 +66,6 @@ class PositionAdminModal extends ModalComponent
     public function render()
     {
         $this->users = User::all();
-        $this->assistants = Position::all();
 
         return view('livewire.admin.position-admin-modal');
     }
@@ -98,7 +94,9 @@ class PositionAdminModal extends ModalComponent
 
     public function close()
     {
+
         $this->closeModal();
+        return redirect()->back('position-admin');
     }
 
     public function save()
@@ -112,7 +110,6 @@ class PositionAdminModal extends ModalComponent
                 'unit' => $this->unit,
                 'type' => $this->type,
                 'head_unit' => $this->head_unit,
-                'assistant_id' => $this->assistant_id,
                 'hierarchy' => $this->hierarchy,
                 'active' => $this->active,
             ],
@@ -125,7 +122,6 @@ class PositionAdminModal extends ModalComponent
                 'type' => 'required|max:4',
                 'unit' => 'required|max:100',
                 'head_unit' => 'nullable|max:10',
-                'assistant_id' => 'nullable|max:8',
                 'active' => 'required|max:1',
             ],
         )->validate();
@@ -134,6 +130,7 @@ class PositionAdminModal extends ModalComponent
 
         $this->emit('positionUpdate');
         $this->closeModal();
+
     }
 
 }
