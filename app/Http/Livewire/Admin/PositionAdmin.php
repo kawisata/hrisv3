@@ -22,6 +22,7 @@ class PositionAdmin extends Component
         ];
 
     protected $queryString = [
+        'search',
     ];
 
     public function loadNota()
@@ -43,8 +44,11 @@ class PositionAdmin extends Component
     public function render()
     {
         $positions = Position::where('type',1)
+            ->leftJoin('users', 'users.id', 'user_id')
+            ->select('positions.*')
             ->where(function($query) {
-                $query->where('name','like', '%' . $this->search . '%')
+                $query->where('positions.name','like', '%' . $this->search . '%')
+                    ->orWhere('users.name', 'like', '%' . $this->search . '%')
                       ->orWhere('alias','like', '%' . $this->search . '%')
                       ->orWhere('user_id','like', '%' . $this->search . '%');
             })
@@ -67,3 +71,5 @@ class PositionAdmin extends Component
         Position::find($id)->delete();
     }
 }
+
+
