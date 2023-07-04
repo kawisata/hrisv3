@@ -117,6 +117,15 @@
                                             <tr><td>Tunjangan Tidak Tetap</td><td style="text-align:right">{{number_format($offcycle->pkwt, 0, ',', '.')}}</td></tr>
                                             @endif
 
+                                            @if($offcycle->rapel == 0)
+                                            @else
+                                            <tr>
+                                                <td>Rapel</td>
+                                                <td style="text-align:right">{{number_format($offcycle->rapel, 0, ',', '.')}}</td>
+                                            </tr>
+                                            @endif
+
+
                                     </tbody>
                                 </table>
                             </td>
