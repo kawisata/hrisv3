@@ -51,6 +51,7 @@ class OffcycleImport implements ToCollection, SkipsEmptyRows, WithHeadingRow, Wi
                         'year' => $row['year'],
                         'position' => $row['position'],
                         'npwp' => $row['npwp'],
+                        'rapel' => $row['rapel'],
                     ]
                 );
         }

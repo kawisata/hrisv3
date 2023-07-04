@@ -296,6 +296,14 @@
 				                  @endif
 				                  @endif
 
+                                    @if($offcycle->rapel == 0)
+                                    @else
+                                    <tr>
+                                        <td>Rapel</td>
+                                        <td style="text-align:right">{{number_format($offcycle->rapel, 0, ',', '.')}}</td>
+                                    </tr>
+                                    @endif
+
                                   				                  <tr>
                                   				                    <td colspan="2" class="font-bold card-header">Lain-lain</td>
                                   				                  </tr>

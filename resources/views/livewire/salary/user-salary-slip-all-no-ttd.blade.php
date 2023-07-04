@@ -5,7 +5,7 @@
 {{-- header v2 --}}
 
             <div class="px-0 py-0 mt-4 text-xs card-body">
-                <table class="table p-0 mx-0 my-0  card-body table-bordered table-sm">
+                <table class="table p-0 mx-0 my-0 card-body table-bordered table-sm">
                     <tr class="font-bold text-center border card-header fs-6">
                         <td colspan="6" >
                             PERINCIAN PEMBAYARAN PENGHASILAN PEKERJA
@@ -65,7 +65,7 @@
                         <tr>
                             <td class="p-0">
                                 <div class="m-0 font-bold border card-header">Penerimaan</div>
-                                <table class="table mb-0 border border-black  card-body table-sm">
+                                <table class="table mb-0 border border-black card-body table-sm">
                                     <tbody>
                                             @if($oncycle->upah_pokok == 0)
                                             @else
@@ -194,6 +194,15 @@
                                                 @else
                                                 <tr><td>Tunjangan Tidak Tetap</td><td style="text-align:right">{{number_format($offcycle->pkwt, 0, ',', '.')}}</td></tr>
                                                 @endif
+
+                                                @if($offcycle->rapel == 0)
+                                                @else
+                                                <tr>
+                                                <td>Rapel</td>
+                                                <td style="text-align:right">{{number_format($offcycle->rapel, 0, ',', '.')}}</td>
+                                                </tr>
+                                                @endif
+
                                             @endif
                                     </tbody>
                                 </table>
