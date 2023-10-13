@@ -38,13 +38,16 @@ class PositionAdminCreateModal extends ModalComponent
             $active,
             $positionid;
 
+
     public function render()
     {
-        $this->users = User::all();
-        $this->assistants = Position::all();
-        $this->groups = Group::all();
 
-        return view('livewire.admin.position-admin-create-modal');
+        return view('livewire.admin.position-admin-create-modal',([
+            'users' => User::all(),
+            'assistants' => Position::all(),
+            'groups'=>Group::all()
+            ]
+        ));
     }
 
     protected static array $maxWidths = [
